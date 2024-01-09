@@ -1,7 +1,19 @@
 # Linear Algebra Theorems and Definitions
 
-This repository houses LaTeX code and the corresponding generated PDF that generates a 
-packet of linear algebra theorems and definitions as they appear in 
-[Linear Algebra, 4th Edition by Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence](https://www.amazon.com/Linear-Algebra-4th-Stephen-Friedberg/dp/0130084514). 
-It is intended to serve as an easy reference of theorems and definitions for use when writing 
-proofs or for just generic linear algebra properties.
+This repository houses LaTeX code (and the corresponding generated [PDF](./Linear-Algebra-Theorems-and-Definitions.pdf)) 
+that generates a packet of all the theorems and definitions contained within 
+[Linear Algebra, 4th Edition by Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence](https://a.co/d/6bV9Pbd). 
+
+## Purpose
+The purpose of this packet is to provide a useful "cheat sheet" for viewing all of the theorems and definitions within the
+textbook for easy reference when writing proofs.
+
+## What's Included?
+This packet includes all of the following from the textbook:
+
+* Definitions
+* Theorems
+* Corollaries
+* Lemmas
+* Remarks
+* Select examples that contain a definition or theorem
