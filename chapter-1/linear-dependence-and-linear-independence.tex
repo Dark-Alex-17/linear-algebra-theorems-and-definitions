@@ -1,1 +1,43 @@
 \section{Linear Dependence and Linear Independence}
+
+\begin{definition}
+	\hfill\\
+	A subset $S$ of a vector space $V$ is called \textbf{linearly dependent} if there exist a finite number of distinct vectors $v_1, v_2, \dots, v_n$ in $S$ and scalars $a_1, a_2, \dots, a_n$ not all zero, such that
+	
+	\[a_1v_2 + a_2v_2 + \dots + a_nv_n = 0\]
+	
+	In this case, we also say that the vectors of $S$ are linearly dependent.\\
+
+	For any vectors $v_1, v_2, \dots, v_n$, we have $a_1v_1 + a_2v_2 + \dots + a_nv_n = 0$ if $a_1 = a_2 = \dots = a_n = 0$. We call this the \textbf{trivial representation} of $0$ as a linear combination of $v_1, v_2, \dots, v_n$. Thus, for a set tot be linearly dependent, there must exist a nontrivial representation of $0$ as a linear combination of vectors in the set. Consequently, any subset of a vector space that contains the zero vector is linearly dependent, because $0 = 1 \cdot 0$ is a nontrivial representation of $0$ as a linear combination of vectors in the set.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A subset $S$ of a vector space that is not linearly dependent is called \textbf{linearly independent}. As before, we also say that the vectors of $S$ are linearly independent.\\
+	
+	The following facts about linearly independent sets are true in any vector space.
+	
+	\begin{enumerate}
+		\item The empty set is linearly independent, for linearly dependent sets must be nonempty.
+		\item A set consisting of a single nonzero vector is linearly independent. For if $\{v\}$ is linearly dependent, then $av = 0$ for some nonzero scalar $a$. thus
+		
+		\[v = a^{-1}(av) = a^{-1}0 = 0.\]
+		
+		\item A set is linearly independent if and only if the only representations of $0$ as linear combinations of its vectors are trivial representations.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ be a vector space, and let $S_1 \subseteq S_2 \subseteq V$. If $S_1$ is linearly dependent, then $S_2$ is linearly dependent.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $V$ be a vector space, and let $S_1 \subseteq S_2 \subseteq V$. If $S_2$ is linearly independent, then $S_1$ is linearly independent.
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Let $S$ be a linearly independent subset of a vector space $V$, and let $v$ be a vector in $V$ that is not in $S$. Then $S \cup \{v\}$ is linearly dependent if and only if $v \in \text{span}(S)$.
+\end{theorem}

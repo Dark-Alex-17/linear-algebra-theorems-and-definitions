@@ -23,6 +23,9 @@
 \usepackage{enumitem}
 \usepackage{mathrsfs}
 
+% Spacing functions
+\newcommand{\thmfill}{\hfill\\}
+
 % Math Functions
 \newcommand{\limx}[2]{\displaystyle\lim\limits_{#1 \to #2}}
 \newcommand{\st}{\ \text{s.t.}\ }
@@ -52,7 +55,7 @@
 \newcommand{\F}{\mathbb{F}}
 
 % Theorem Styles
-\declaretheorem[numberwithin=subsection, style=definition]{theorem, definition, notation, lemma, corollary, remark, example}
+\declaretheorem[numberwithin=section, style=definition]{theorem, definition, notation, lemma, corollary, remark, example}
 
 % Formatting
 \setlist[enumerate]{font=\bfseries}

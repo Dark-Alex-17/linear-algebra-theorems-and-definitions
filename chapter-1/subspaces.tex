@@ -1,1 +1,60 @@
 \section{Subspaces}
+
+\begin{definition}
+	\hfill\\
+	A subset $W$ of a vector space $V$ over a field $\F$ is called a \textbf{subspace} of $V$ if $W$ is a vector space over $\F$ with the operations of addition and scalar multiplication defined on $V$.\\
+	
+	In any vector space $V$, note that $V$ and $\{0\}$ are subspaces. The latter is called the \textbf{zero subspace} of $V$.
+	
+	Fortunately, it is not necessary to verify all of the vector space properties to prove that a subset is a subspace. Because properties (VS 1), (VS 2), (VS 5), (VS 6), (VS 7) and (VS 8) hold for all vectors in the vector space, these properties automatically hold for the vectors in any subset. Thus a subset $W$ of a vector space $V$ is a subspace of $V$ if and only if the following four properties hold:
+	
+	\begin{enumerate}
+		\item $x + y \in W$ whenever $x \in W$ and $y \in W$. ($W$ is \textbf{closed under addition}).
+		\item $cx \in W$ whenever $c \in \F$ and $x \in W$. ($W$ is \textbf{closed under scalar multiplication}).
+		\item $W$ has a zero vector.
+		\item Each vector in $W$ has an additive inverse in $W$.1
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ be a vector space and $W$ a subset of $V$. Then $W$ is a subspace of $V$ if and only if the following three conditions hold for the operations defined in $V$.
+	
+	\begin{enumerate}
+		\item $0 \in W$.
+		\item $x + y \in W$ whenever $x \in W$ and $y \in W$.
+		\item $cx \in W$ whenever $c \in \F$ and $x \in W$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	The \textbf{transpose} $A^t$ of an $m \times n$ matrix $A$ is the $n \times m$ matrix obtained from $A$ by interchanging the rows with the columns; that is, $(A^t)_{ij} = A_{ji}$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A \textbf{symmetric matrix} is a matrix $A$ such that $A^t = A$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	An $n \times n$ matrix $M$ is called a \textbf{diagonal matrix} if $M_{ij} = 0$ whenever $i \neq j$; that is, if all nondiagonal entries are zero.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	The \textbf{trace} of an $n \times n$ matrix $M$, denoted $\text{tr}(M)$, is the sum of the diagonal entries of $M$; that is,
+	
+	\[\text{tr}(M) = M_{11} + M_{22} + \dots + M_{nn}.\]
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Any intersection of subspaces of a vector space $V$ is a subspace of $V$.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	An $m \times n$ matrix $A$ is called \textbf{upper triangular} if all entries lying below the diagonal entries are zero; that is, if $A_{ij} = 0$ whenever $i > j$.
+\end{definition}
