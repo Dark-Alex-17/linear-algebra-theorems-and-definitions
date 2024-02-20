@@ -1,1 +1,87 @@
 \section{Invertibility and Isomorphisms}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ and $W$ be vector spaces, and let $T: V \to W$ be linear. A function $U: W \to V$ is said to be an \textbf{inverse} of $T$ if $TU = I_W$ and $UT = I_V$. If $T$ has an inverse, then $T$ is said to be \textbf{invertible}. If $T$ is invertible, then the inverse of $T$ is unique and is denoted by $T^{-1}$.\\
+	
+	The following facts hold for invertible functions $T$ and $U$.
+	
+	\begin{enumerate}
+		\item $(TU)^{-1} = U^{-1}T^{-1}$.
+		\item $(T^{-1})^{-1} = T$; in particular, $T^{-1}$ is invertible.
+	\end{enumerate}
+	
+	We often use the fact that a function is invertible if and only if it is one-to-one and onto. We can therefore restate \autoref{Theorem 2.5} as follows:
+	
+	\begin{enumerate}
+		\setcounter{enumi}{2}
+		\item Let $T: V \to W$ be a linear transformation, where $V$ and $W$ are finite-dimensional vector spaces of equal dimension. then $T$ is invertible if and only if $\rank{T} = \ldim{T}$.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ and $W$ be vector spaces, and let $T: V \to W$ be linear and invertible. Then $T^{-1}: W \to V$ is linear.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Let $A$ be an $n \times n$ matrix. Then $A$ is \textbf{invertible} if there exists an $n \times n$ matrix $B$ such that $AB = BA = I$.\\
+	
+	If $A$ is invertible, then the matrix $B$ such that $AB = BA = I$ is unique. (If $C$ were another such matrix, then $C = CI = C(AB) = (CA)B = IB = B$.) The matrix $B$ is called the \textbf{inverse} of $A$ and is denoted by $A^{-1}$.
+\end{definition}
+
+\begin{lemma}
+	\hfill\\
+	Let $T$ be an invertible linear transformation from $V$ to $W$. Then $V$ is finite-dimensional if and only if $W$ is finite-dimensional. In this case, $\ldim{V} = \ldim{W}$
+\end{lemma}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ and $W$ be finite-dimensional vector spaces with ordered bases $\beta$ and $\gamma$, respectively. Let $T: V \to W$ be linear. Then $T$ is invertible if and only if $[T]_\beta^\gamma$ is invertible. Furthermore, $[T^{-1}]_\gamma^\beta = ([T]_\beta^\gamma)^{-1}$.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $V$ be a finite-dimensional vector space with an ordered bases $\beta$, and let $T: V \to V$ be linear. Then $T$ is invertible if and only if $[T]_\beta$ is invertible. Furthermore, $[T^{-1}]_\beta = ([T]_\beta)^{-1}$.
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	Let $A$ be and $n \times n$ matrix. Then $A$ is invertible if and only if $L_A$ is invertible. Furthermore, $(L_A)^{-1} = L_{A^{-1}}$.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ and $W$ be vector spaces. We say that $V$ is \textbf{isomorphic} to $W$ if there exists a linear transformation $T: V \to W$ that is invertible. Such a linear transformation is called an \textbf{isomorphism} from $V$ onto $W$.
+\end{definition}
+
+\begin{theorem}\label{Theorem 2.19}
+	\hfill\\
+	Let $V$ and $W$ be finite-dimensional vector spaces (over the same field). Then $V$ is isomorphic to $W$ if and only if $\ldim{V} = \ldim{W}$.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $V$ be a vector space over $\F$. Then $V$ is isomorphic to $\F^n$ if and only if $\ldim{V} = n$.
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ and $W$ be finite-dimensional vector spaces over $\F$ of dimensions $n$ and $m$, respectively, and let $\beta$ and $\gamma$ be ordered bases for $V$ and $W$, respectively. Then the function $\Phi: \LL(V,W) \to M_{m \times n}(\F)$, defined by $\Phi(T) = [T]_\beta^\gamma$ for $T \in \LL(V,W)$ is an isomorphism.
+\end{theorem}
+
+\begin{corollary}\label{Corollary 2.7}
+	\hfill\\
+	Let $V$ and $W$ be finite-dimensional vector spaces of dimension $n$ and $m$, respectively. Then $\LL(V,W)$ is finite-dimensional of dimension $mn$.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $\beta$ be an ordered basis for an $n$-dimensional vector space $V$ over the field $\F$. The \textbf{standard representation of $V$ with respect to $\beta$} is the function $\phi_\beta: V \to \F^n$ defined by $\phi_\beta(x) = [x]_\beta$ for each $x \in V$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	For any finite-dimensional vector space $V$ with ordered basis $\beta$, $\phi_\beta$ is an isomorphism.
+\end{theorem}

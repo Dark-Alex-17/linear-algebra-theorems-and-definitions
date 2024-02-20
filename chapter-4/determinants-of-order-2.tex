@@ -1,1 +1,76 @@
 \section{Determinants of Order 2}
+
+\begin{definition}
+	\hfill\\
+	If
+	
+	\[A = \begin{pmatrix}
+		a & b \\
+		c & d
+	\end{pmatrix}\]
+	 is a $2 \times 2$ matrix with entries from a field $\F$, then we define the \textbf{determinant} of $A$, denoted $\det(A)$ or $|A|$, to be the scalar $ad-bc$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	The function $\det: M_{2 \times 2}(\F) \to \F$ is a linear function of each row of a $2 \times 2$ matrix when the other row is held fixed. That is, if $u$, $v$ and $w$ are in $\F^2$ and $k$ is a scalar, then
+	
+	\[\det \begin{pmatrix}
+		u + kv \\
+		w
+	\end{pmatrix} = \det\begin{pmatrix}
+	u \\ w
+	\end{pmatrix} + k\det\begin{pmatrix}
+	v \\ w
+	\end{pmatrix}\]
+	
+	and
+	
+	\[\det\begin{pmatrix}
+		w \\ u + kv
+	\end{pmatrix} = \det\begin{pmatrix}
+	w \\ u
+	\end{pmatrix} + k \det \begin{pmatrix}
+	w \\ v
+	\end{pmatrix}.\]
+\end{theorem}
+
+\begin{theorem}\label{Theorem 4.2}
+	\hfill\\
+	Let $A \in M_{2 \times 2}(\F)$. Then the determinant of $A$ is nonzero if and only if $A$ is invertible. Moreover, if $A$ is invertible, then
+	
+	\[A^{-1} = \frac{1}{\det(A)}\begin{pmatrix}
+		A_{22} & -A_{12} \\
+		-A_{21} & A_{11}
+	\end{pmatrix}.\]
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	By the \textbf{angle} between two vectors in $\R^2$, we mean the angle with measure $\theta$ ($0 \leq \theta < \pi$) that is formed by the vectors having the same magnitude and direction as the given vectors by emanating from the origin.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	If $\beta = \{u,v\}$ is an ordered basis for $\R^2$, we define the \textbf{orientation} of $\beta$ to be the real number
+	
+	\[O\begin{pmatrix}
+		u \\ v
+	\end{pmatrix} = \frac{\det\begin{pmatrix}
+		u \\ v
+		\end{pmatrix}}{\abs{\det\begin{pmatrix}
+			u \\ v
+	\end{pmatrix}}}\]
+
+	(The denominator of this fraction is nonzero by \autoref{Theorem 4.2}).
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A coordinate system $\{u, v\}$ is called \textbf{right-handed} if $u$ can be rotated in a counterclockwise direction through an angle $\theta$ ($0 < \theta < \pi$) to coincide with $v$. Otherwise, $\{u ,v\}$ is called a \textbf{left-handed} system.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Any ordered set $\{u, v\}$ in $\R^2$ determines a parallelogram in the following manner. Regarding $u$ and $v$ as arrows emanating from the origin of $\R^2$, we call the parallelogram having $u$ and $v$ as adjacent sides the \textbf{parallelogram determined by $u$ and $v$}.
+\end{definition}

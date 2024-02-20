@@ -1,1 +1,86 @@
 \section{Dual Spaces}
+
+\begin{definition}
+	\hfill\\
+	A linear transformation from a vector space $V$ into its field of scalars $\F$, which is itself a vector space of dimension 1 over $\F$, is called a \textbf{linear functional} on $V$. We generally use the letters $\mathsf{f}, \mathsf{g}, \mathsf{h}, \dots$. to denote linear functionals.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be a vector space of continuous real-valued functions on the interval $[0, 2\pi]$. Fix a function $g \in V$. The function $\mathsf{h}: V \to \R$, defined by
+	
+	\[\mathsf{h}(x) = \frac{1}{2\pi} \int_{0}^{2\pi}x(t)g(t) dt\]
+	
+	is a linear functional on $V$. In the cases that $g(t)$ equals $\sin(nt)$ or $\cos (nt)$, $\mathsf{h}(x)$ is often called the \textbf{\textit{n}th Fourier coefficient of $x$}.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be a finite dimensional vector space, and let $\beta = \{x_1, x_2, \dots, x_n\}$ be an ordered basis for $V$. For each $i = 1, 2, \dots, n$, define $\mathsf{f}_i(x) = a_i$, where
+	
+	\[[x]_\beta = \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}\]
+	
+	is the coordinate vector of $x$ relative to $\beta$. Then $\mathsf{f}$ is a linear function on $V$ called the \textbf{\textit{i}th coordinate function with respect to the basis $\beta$}. Note that $\mathsf{f}_i(x_j) = \delta_{ij}$, where $\delta_{ij}$ is the Kronecker delta. These linear functionals play an important role in the theory of dual spaces (see \autoref{Theorem 2.24}).
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	For a vector space $V$ over $\F$, we define the \textbf{dual space} of $V$ to be the vector space $\LL(V, \F)$, denoted by $V^*$.\\
+	
+	Thus $V^*$ is the vector space consisting of all linear functionals on $V$ with the operations of addition and scalar multiplication. Note that if $V$ is finite-dimensional, then by \autoref{Corollary 2.7}
+	
+	\[\ldim{V^*}= \ldim{\LL(V,\F)} = \ldim{V} \cdot \ldim{\F} = \ldim{V}.\]
+	
+	Hence by \autoref{Theorem 2.19}, $V$ and $V^*$ are isomorphic. We also define the \textbf{double dual} $V^{**}$ of $V$ to be the dual of $V^*$. In \autoref{Theorem 2.26}, we show, in fact, that there is a natural identification of $V$ and $V^{**}$ in the case that $V$ is finite-dimensional.
+\end{definition}
+
+\begin{theorem}\label{Theorem 2.24}
+	\hfill\\
+	Suppose that $V$ is a finite-dimensional vector space with the ordered basis $\beta = \{x_1, x_2, \dots, x_n\}$. Let $\mathsf{f}_i$ ($1 \leq i \leq n$) be the $i$th coordinate function with respect to $\beta$ as just defined, and let $\beta^*=\{\mathsf{f}_1, \mathsf{f}_2, \dots, \mathsf{f}_n\}$. Then $\beta^*$ is an ordered basis for $V^*$, and, for any $\mathsf{f} \in V^*$, we have
+	
+	\[\mathsf{f} = \sum_{i=1}^{n}\mathsf{f}(x_i)\mathsf{f}_i.\]
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Using the notation of \autoref{Theorem 2.24}, we call the ordered basis $\beta^* = \{\mathsf{f}_1, \mathsf{f}_2, \dots, \mathsf{f}_n\}$ of $V^*$ that satisfies $\mathsf{f}_i(x_j) = \delta_{ij}$ ($1 \leq i,\ j \leq n$) the \textbf{dual basis} of $\beta$.
+\end{definition}
+
+\begin{theorem}\label{Theorem 2.25}
+	\hfill\\
+	Let $V$ and $W$ be finite-dimensional vector spaces over $\F$ with ordered bases $\beta$ and $\gamma$, respectively. For any linear transformation $T: V \to W$, the mapping $T^t: W^* \to V^*$ defined by $T^t(\mathsf{g}) = \mathsf{g}T$ for all $\mathsf{g} \in W^*$ is a linear transformation with the property that $[T^t]_{\gamma^*}^{\beta^*} = ([T]_\beta^\gamma)^t$.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	The linear transformation $T^t$ defined in \autoref{Theorem 2.25} is called the \textbf{transpose} of $T$. It is clear that $T^t$ is the unique linear transformation $U$ such that $[U]_{\gamma^*}^{\beta^*} = ([T]_\beta^\gamma)^t$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	For a vector $x$ in a finite-dimensional vector space $V$, we define the linear functional $\hat{x}: V^* \to \F$ on $V^*$ by $\hat{x}(\mathsf{f}) = \mathsf{f}(x)$ for every $\mathsf{f} \in V^*$. Since $\hat{x}$ is a linear functional on $V^*$, $\hat{x} \in V^{**}$.\\
+	
+	The correspondence $x \leftrightarrow \hat{x}$ allows us to define the desired isomorphism between $V^*$ and $V^{**}$.
+\end{definition}
+
+\begin{lemma}
+	\hfill\\
+	Let $V$ be a finite-dimensional vector space, and let $x \in V$. If $\hat{x}(\mathsf{f})=0$ for all $\mathsf{f} \in V^*$, then $x = 0$.
+\end{lemma}
+
+\begin{theorem}\label{Theorem 2.26}
+	\hfill\\
+	Let $V$ be a finite-dimensional vector space, and define $\psi: V \to V^{**}$ by $\psi(x) = \hat{x}$. Then $\psi$ is an isomorphism.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $V$ be a finite-dimensional vector space with dual space $V^*$. Then every ordered basis for $V^*$ is the dual basis for some basis $V$.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be a finite-dimensional vector space over $\F$. For every subset $S$ of $V$, define the \textbf{annihilator} $S^0$ of $S$ as
+	
+	\[S^0 = \{\mathsf{f} \in V^*\ |\ \mathsf{f}(x) = 0,\ \text{for all}\ x \in S\}\]
+\end{definition}

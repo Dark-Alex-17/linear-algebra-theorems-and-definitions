@@ -1,1 +1,40 @@
 \section{The Change of Coordinate Matrix}
+
+\begin{theorem}\label{Theorem 2.22}
+	\hfill\\
+	Let $\beta$ and $\beta'$ be two ordered bases for a finite-dimensional vector pace $V$, and let $Q = [I_V]_{\beta'}^\beta$. Then
+	
+	\begin{enumerate}
+		\item $Q$ is invertible.
+		\item For any $v \in V$, $[v]_\beta = Q[v]_{\beta'}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	The matrix $Q=[I_V]_{\beta'}^\beta$, defined in \autoref{Theorem 2.22}, is called a \textbf{change of coordinate matrix}. Because of part (2) of the theorem, we say that \textbf{$Q$ changes $\beta'$-coordinates into $\beta$-coordinates}.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A linear transformation that maps a vector space $V$ into itself is called a \textbf{linear operator on $V$}.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional vector space $V$, and let $\beta$ and $\beta'$ be ordered bases for $V$. Suppose that $Q$ is the change of coordinate matrix that changes $\beta'$-coordinates into $\beta$-coordinates. Then
+	
+	\[[T]_{\beta'}=Q^{-1}[T]_\beta Q\]
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $A \in M_{n \times n}(\F)$, and let $\gamma$ be an ordered basis for $\F^n$. Then $[L_A]_\gamma = Q^{-1}AQ$, where $Q$ is the $n \times n$ matrix whose $j$th column is the $j$th vector of $\gamma$.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $A$ and $B$ be matrices in $M_{n \times n}(\F)$. We say that $B$ is \textbf{similar} to $A$ if there exists an invertible matrix $Q$ such that $B = Q^{-1}AQ$.\\
+	
+	Notice that the relation of similarity is an equivalence relation. So we need only say that $A$ and $B$ are similar.
+\end{definition}

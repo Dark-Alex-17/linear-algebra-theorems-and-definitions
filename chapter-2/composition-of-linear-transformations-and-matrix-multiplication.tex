@@ -1,1 +1,120 @@
 \section{Compositions of Linear Transformations and Matrix Multiplication}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$, $W$, and $Z$ be vector spaces over the same field $\F$, and let $T: V \to U$ and $U: W \to Z$ be linear. Then $UT: V \to Z$ is linear.
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ be a vector space. Let $T, U_1, U_2 \in \LL(V)$. Then
+	
+	\begin{enumerate}
+		\item $T(U_1 + U_2) = TU_1 + TU_2$ and $(U_1 + U_2)T = U_1T + U_2T$
+		\item $T(U_1U_2) = (TU_1)U_2$
+		\item $TI = IT = T$
+		\item $a(U_1U_2) = (aU_1)U_2 = U_1(aU_2)$ for all scalars $a$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix and $B$ be an $n \times p$ matrix. We define the \textbf{product} of $A$ and $B$, denoted $AB$, to be the $m \times p$ matrix such that
+	
+	\[(AB)_{ij} = \sum_{k=1}^{n}A_{ik}B_{kj}\ \ \text{for}\ \ 1 \leq i \leq m,\ \ 1 \leq j \leq p.\]
+	
+	Notice that $(AB)_{ij}$ is the sum of products of corresponding entries from the $i$th row of $A$ and the $j$th column of $B$.\\
+	
+	The reader should observe that in order for the product $AB$ to be defined, there are restrictions regarding the relative sizes of $A$ and $B$. The following mnemonic device is helpful: ``$(m \times n) \cdot (n \times p) = (m \times p)$"; that is, in order for the product $AB$ to be defined, the two ``inner" dimensions must be equal, and the two ``outer" dimensions yield the size of the product.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$, $W$, and $Z$ be finite-dimensional vector spaces with ordered bases $\alpha$, $\beta$, and $\gamma$, respectively. Let $T: V \to W$ and $U: W \to Z$ be linear transformations. Then
+	
+	\[[UT]_\alpha^\gamma = [U]_\beta^\gamma[T]_\alpha^\beta\]
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $V$ be a finite-dimensional vector space with an ordered basis $\beta$. Let $T, U \in \LL(V)$. Then $[UT]_\beta = [U]_\beta [T]_\beta$.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	We define the \textbf{Kronecker delta} $\delta_{ij}$ by $\delta_{ij}=1$ if $i = j$ and $\delta_{ij}=0$ if $i \neq j$. The $n \times n$ \textbf{identity matrix} $I_n$ is defined by $(I_n)_{ij} = \delta_{ij}$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix, $B$ and $C$ be $n \times p$ matrices, and $D$ and $E$ be $q \times m$ matrices. Then
+	
+	\begin{enumerate}
+		\item $A(B + C) = AB + AC$ and $(D + E)A = DA + EA$.
+		\item $a(AB) = (aA)B = A(aB)$ for any scalar $a$.
+		\item $I_mA = A = AI_n$.
+		\item If $V$ is an $n$-dimensional vector space with an ordered basis $\beta$, then $[I_V]_\beta = I_n$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix, $B_1, B_2, \dots, B_k$ be $n \times p$ matrices, $C_1, C_2, \dots, C_k$ be $q \times m$ matrices, and $a_1, a_2, \dots, a_k$ be scalars. Then
+	
+	\[A\left(\sum_{i=1}^{k}a_iB_i\right) = \sum_{i=1}^{k}a_iAB_i\]
+	
+	and
+	
+	\[\left(\sum_{i=1}^{k}a_iC_i\right)A = \sum_{i=1}^{k}a_iC_iA.\]
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix and $B$ be an $n \times p$ matrix. For each $j$ ($1 \leq j \leq p$) let $u_j$ and $v_j$ denote the $j$th columns of $AB$ and $B$, respectively. Then
+	
+	\begin{enumerate}
+		\item $u_j = Av_j$.
+		\item $v_j = Be_j$, where $e_j$ is the $j$th standard vector of $\F^p$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ and $W$ be finite-dimensional vector spaces having ordered bases $\beta$  and $\gamma$, respectively, and let $T: V \to W$ be linear. Then, for each $u \in V$, we have
+	
+	\[[T(u)]_\gamma = [T]_\beta^\gamma [u]_\beta.\]
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix with entries from a field $\F$. We denote $L_A: \F^n \to \F^m$ defined by $L_A(x) = Ax$ (the matrix product of $A$ and $x$) for each column vector $x \in \F^n$. We call $L_A$ a \textbf{left-multiplication transformation}.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix with entries from $\F$. Then the left-multiplication transformation $L_A: \F^n \to \F^m$ is linear. Furthermore, if $B$ is any other $m \times n$ matrix (with entries from $\F$) and $\beta$ and $\gamma$ are the standard ordered bases for $\F^n$ and $\F^m$, respectively, then we have the following properties.
+	
+	\begin{enumerate}
+		\item $[L_A]_\beta^\gamma = A$.
+		\item $L_A = L_B$ if and only if $A = B$.
+		\item $L_{A + B} = L_A + L_B$ and $L_{aA} = aL_A$ for all $a \in \F$.
+		\item If $T: \F^n \to \F^m$ is linear, then there exists a unique $m \times n$ matrix $C$ such that $T = L_C$. In fact, $C = [T]_\beta^\gamma$.
+		\item If $E$ is an $n \times p$ matrix, then $L_{AE} = L_AL_E$.
+		\item If $m = n$, then $L_{I_n} = I_{\F^n}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	Let $A$, $B$, and $C$ be matrices such that $A(BC)$ is defined. Then $(AB)C$ is also defined and $A(BC)=(AB)C$; that is, matrix multiplication is associative.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	An \textbf{incidence matrix} is a square matrix in which all the entries are either zero or one and, for convenience, all the diagonal entries are zero. If we have a relationship on a set of $n$ objects that we denote $1, 2, \dots, n$, then we define the associated incidence matrix $A$ by $A_{ij} = 1$ if $i$ is related to $j$, and $A_{ij} = 0$ otherwise.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A relationship among a group of people is called a \textbf{dominance relation} if the associated incidence matrix $A$ has the property that for all distinct pairs $i$ and $j$, $A_{ij} = 1$ if and only if $A_{ji} = 0$, that is, given any two people, exactly one of them \textit{dominates} the other.
+\end{definition}

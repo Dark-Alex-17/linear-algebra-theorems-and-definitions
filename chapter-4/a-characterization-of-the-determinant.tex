@@ -1,1 +1,56 @@
 \section{A Characterization of the Determinant}
+
+\begin{definition}
+	\hfill\\
+	A function $\delta: M_{n \times n}(\F) \to \F$ is called an \textbf{\textit{n}-linear function} if it is a linear function of each row of an $n \times n$ matrix when the remaining $n-1$ rows are held fixed, that is, $\delta$ is $n$-linear if, for every $r = 1, 2, \dots, n$, we have
+	
+	\[\delta\begin{pmatrix}
+		a_1 \\ \vdots \\ a_{r-1} \\ u+kv \\ a_{r + 1} \\ \vdots \\ a_n
+	\end{pmatrix} = \delta\begin{pmatrix}
+	a_1 \\ \vdots \\ a_{r-1} \\ u \\ a_{r + 1} \\ \vdots \\ a_n
+	\end{pmatrix} + k\delta\begin{pmatrix}
+	a_1 \\ \vdots \\ a_{r-1} \\ v \\ a_{r+1} \\ \vdots \\ a_n
+	\end{pmatrix}\]
+	
+	whenever $k$ is a scalar and $u,v$ and each $a_i$ are vectors in $\F^n$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	An $n$-linear function $\delta: M_{n \times n}(\F) \to \F$ is called \textbf{alternating} if, for each $A \ in M_{n \times n}(\F)$, we have $\delta(A) = 0$ whenever two adjacent rows of $A$ are identical.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $\delta: M_{n \times n}(\F) \to \F$ be an alternating $n$-linear function.
+	
+	\begin{enumerate}
+		\item If $A \in M_{n \times n}(\F)$ and $B$ is a matrix obtained from $A$ by interchanging any two rows of $A$, then $\delta(B) = -\delta(A)$.
+		\item If $A \in M_{n \times n}(\F)$ has two identical rows, then $\delta(A) = 0$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $\delta: M_{n \times n}(\F) \to \F$ be an alternating $n$-linear function. If $B$ is a matrix obtained from $A \in M_{n \times n}(\F)$ by adding a multiple of some row of $A$ to another row, then $\delta(B) = \delta(A)$.
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	Let $\delta: M_{n \times n}(\F) \to \F$ be an alternating $n$-linear function. if $M \in M_{n \times n}(\F)$ has rank less than $n$, then $\delta(M) = 0$.
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	Let $\delta: M_{n \times n}(\F) \to \F$ be an alternating $n$-linear function, and let $E_1, E_2$ and $E_3$ in $M_{n \times n}(\F)$ be elementary matrices of types 1, 2, and 3, respectively. Suppose that $E_2$ is obtained by multiplying some row of $I$ by the nonzero scalar $k$. Then $\delta(E_1) = -\delta(I)$, $\delta(E_2) = k \cdot \delta(I)$, and $\delta(E_3) = \delta(I)$.
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Let $\delta: M_{n \times n}(\F) \to \F$ be an alternating $n$-linear function such that $\delta(I) = 1$. For any $A,B \in M_{n \times n}(\F)$, we have $\delta(AB) = \delta(A) \cdot \delta(B)$.
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	If $\delta: M_{n \times n}(\F) \to \F$ is an alternating $n$-linear function such that $\delta(I) = 1$, then $\delta(A) = \det(A)$ for every $A \in M_{n \times n}(\F)$.
+\end{theorem}

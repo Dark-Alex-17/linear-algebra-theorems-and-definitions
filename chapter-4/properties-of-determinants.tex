@@ -1,1 +1,104 @@
 \section{Properties of Determinants}
+
+\begin{remark}
+	\hfill\\
+	Because the determinant of the $n \times n$ matrix is $1$, we can interpret \autoref{Remark 4.1} as the following facts about the determinants of elementary matrices.
+	
+	\begin{enumerate}
+		\item If $E$ is an elementary matrix obtained by interchanging any two rows of $I$, then $\det(E) = -1$.
+		\item If $E$ is an elementary matrix obtained by multiplying some row of $I$ by the nonzero scalar $k$, then $\det(E) = k$.
+		\item If $E$ is an elementary matrix obtained by adding a multiple of some row of $I$ to another row, then $\det(E) = 1$.
+	\end{enumerate}
+\end{remark}
+
+\begin{theorem}
+	\hfill\\
+	For any $A, B \in M_{n \times n}(\F)$, $\det(AB) = \det(A) \cdot \det(B)$.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	A matrix $A \in M_{n \times n}(\F)$ is invertible if and only if $\det(A) \neq 0$. Furthermore, if $A$ is invertible, then $\det(A^{-1}) = \displaystyle\frac{1}{\det(A)}$.
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	For any $A \in M_{n \times n}(\F)$, $\det(A^t)=\det(A)$.
+\end{theorem}
+
+\begin{theorem}[\textbf{Cramer's Rule}]
+	\hfill\\
+	Let $Ax = b$ be the matrix form of a system of $n$ linear equations in $n$ unknowns, where $x = (x_1, x_2, \dots, x_n)^t$. If $\det(A) \neq 0$, then this system has a unique solution, and for each $k$ ($k = 1, 2, \dots, n$), 
+	
+	\[x_k = \frac{\det(M_k)}{\det(A)},\]
+	
+	where $M_k$ is the $n \times n$ matrix obtained from $A$ by replacing column $k$ of $A$ by $b$.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	It is possible to interpret the determinant of a matrix $A \in M_{n \times n}(\R)$ geometrically. If the rows of $A$ are $a_1, a_2, \dots, a_n$, respectively, then $|\det(A)|$ is the \textbf{\textit{n}-dimensional volume} (the generalization of are in $\R^2$ and volume in $\R^3$) of the parallelepiped having the vectors $a_1, a_2, \dots, a_n$ as adjacent sides.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A matrix $M \in M_{n \times n}(\C)$ is called \textbf{nilpotent} if, for some positive integer $k$, $M^k = O$, where $O$ is the $n \times n$ zero matrix.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A matrix $M \in M_{n \times n}(\C)$ is called \textbf{skew-symmetric} if $M^t = -M$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A matrix $Q \in M_{n \times n}(\R)$ is called \textbf{orthogonal} if $QQ^t = I$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A matrix $Q \in M_{n \times n}(\C)$ is called \textbf{unitary} if $QQ^* = I$, where $Q^* = \overline{Q^t}$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A matrix $A \in M_{n \times n}(\F)$ is called \textbf{lower triangular} if $A_{ij}=0$ for $1 \leq i < j \leq n$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A matrix of the form
+	
+	\[\begin{pmatrix}
+		1 & c_0 & c_0^2 & \dots & c_0^n \\
+		1 & c_1 & c_1^2 & \dots & c_1^n \\
+		\vdots & \vdots & \vdots & &\vdots \\
+		1 & c_n & c_n^2 & \dots & c_n^n
+	\end{pmatrix}\]
+	
+	is called a \textbf{Vandermonde matrix}.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $A \in M_{n \times n}(\F)$ be nonzero. For any $m$ ($1 \leq m \leq n$), and $m \times m$ \textbf{submatrix} is obtained by deleting any $n - m$ rows and any $n - m$ columns of $A$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	The \textbf{classical adjoint} of a square matrix $A$ is the transpose of the matrix whose $ij$-entry is the $ij$-cofactor of $A$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $y_1, y_2, \dots, y_n$ be linearly independent function in $\C^\infty$. For each $y \in \C^\infty$, define $T(y) \in \C^\infty$ by
+	
+	\[[T(y)](t) = \det\begin{pmatrix}
+		y(t) & y_1(t) & y_2(t) & \dots & y_n(t) \\
+		y'(t) & y'_1(t) & y'_2(t) & \dots & y'_n(t) \\
+		\vdots & \vdots & \vdots & &\vdots \\
+		y^{(n)}(t) & y_1^{(n)}(t) & y_2^{(n)}(t) & \dots & y_n^{(n)}(t)
+	\end{pmatrix}\]
+	
+	The preceding determinant is called the \textbf{Wronskian} of $y, y_1, \dots, y_n$.
+\end{definition}
