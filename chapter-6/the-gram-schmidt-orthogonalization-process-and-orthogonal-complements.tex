@@ -1,1 +1,116 @@
 \section{The Gram-Schmidt Orthogonalization Process and Orthogonal Complements}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be an inner product space. A subset of $V$ is an \textbf{orthonormal basis} for $V$ if it is an ordered basis that is orthonormal.
+\end{definition}
+
+\begin{theorem}\label{Theorem 6.3}
+	\hfill\\
+	Let $V$ be an inner product space and $S=\{v_1, v_2, \dots, v_k\}$ be an orthogonal subset of $V$ consisting of nonzero vectors. If $y \in \lspan{S}$, then
+
+	\[y = \sum_{i=1}^{k}\frac{\lr{y,v_i}}{||v_i||^2}v_i.\]
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	If, in addition to the hypotheses of \autoref{Theorem 6.3}, $S$ is orthonormal and $y \in \lspan(S)$, then
+
+	\[y = \sum_{i=1}^{k}\lr{y,v_i}v_i.\]
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	Let $V$ be an inner product space, and let $S$ be an orthogonal subset of $V$ consisting of nonzero vectors. Then $S$ is linearly independent.
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ be an inner product space and $S = \{w_1, w_2, \dots, w_n\}$ be a linearly independent subset of $V$. Define $S' = \{v_1, v_2, \dots, v_n\}$ where $v_1 = w_1$ and
+
+	\[v_k = w_k - \sum_{j=1}^{k-1}\frac{\lr{w_k,v_j}}{||v_j||^2}v_j\ \ \text{for}\ 2 \leq k \leq n.\]
+
+	Then $S'$ is an orthogonal set of nonzero vectors such that $\lspan{S'} = \lspan{S}$.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	The \textbf{Gram-Schmidt process} is a way of making two or more vectors perpendicular to each other. It is a method of constructing an orthonormal basis from a set of vectors in an inner product space. It takes a finite, linearly independent set of vectors $S = \{v_1, v_2, \dots, v_k\}$ for $k \leq n$ and generates an orthogonal set $S' = \{u_1, u_2, \dots, u_k\}$ that spans the same $k$-dimensional subspace of $\R^n$ as $S$.\\
+
+	The \textbf{vector projection} of a vector $v$ on a nonzero vector $u$ is defined as
+
+	\[\text{proj}_u(v) = \frac{\lr{v,u}}{\lr{u,u}}u,\]
+
+	This means that $\text{proj}_u(v)$ is the orthogonal projection of $v$ onto the line spanned by $u$. If $u$ is the zero vector, then $\text{proj}_u(v)$ is defined as the zero vector.\\
+
+	Given $k$ vectors $v_1, v_2, \dots, v_k$, the Gram-Schmidt process defines the vectors $u_1, u_2, \dots, u_k$ as follows:
+
+	\[\begin{aligned}
+			 & u_1 = v_1,                                                                            & e_1 = \frac{u_1}{||u_1||}  \\
+			 & u_2 = v_2 - \text{proj}_{u_1}(v_2),                                                   & e_2 = \frac{u_2}{||u_2||}  \\
+			 & u_3 = v_3 - \text{proj}_{u_1}(v_3) - \text{proj}_{u_2}(v_3),                          & e_3 = \frac{u_3}{||u_3||}  \\
+			 & u_4 = v_4 - \text{proj}_{u_1}(v_4) - \text{proj}_{u_2}(v_4) - \text{proj}_{u_3}(v_4), & e_4 = \frac{u_4}{||u_4||}  \\
+			 & \vdots                                                                                & \vdots                     \\
+			 & u_k = v_k = \sum_{j=1}^{k-1}\text{proj}_{u_j}(v_k),                                   & e_k = \frac{u_k}{||u_k||}.
+		\end{aligned}\]
+
+	The sequence $u_1, u_2, \dots, u_k$ is the required system of orthogonal vectors, and the normalized vectors $e_1, e_2, \dots, e_k$ form an orthonormal set.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ be a nonzero finite-dimensional inner product space. Then $V$ has an orthonormal basis $\beta$. Furthermore, if $\beta = \{v_1, v_2, \dots, v_n\}$ and $x \in V$, then
+
+	\[x = \sum_{i=1}^{n}\lr{x,v_i}v_i.\]
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $V$ be a finite-dimensional inner product space with an orthonormal basis $\beta = \{v_1, v_2, \dots, v_n\}$. Let $T$ be a linear operator on $V$, and let $A = [T]_\beta$. Then for any $i$ and $j$, $A_{ij} = \lr{T(v_j),v_i}$.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $\beta$ be an orthonormal subset (possibly infinite) of an inner product space $V$, and let $x \in V$. We define the \textbf{Fourier coefficients} of $x$ relative to $\beta$ to be the scalars $\lr{x,y}$, where $y \in \beta$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $S$ be a nonempty subset of an inner product space $V$. We define $S^\perp$ (read ``S perp") to be the set of all vectors in $V$ that are orthogonal to every vector in $S$; that is, $S^\perp = '{x \in V : \lr{x,y} = 0,\ \forall y \in S}$. The set $S^\perp$ is called the \textbf{orthogonal complement of $S$}.
+\end{definition}
+
+\begin{theorem}\label{Theorem 6.6}
+	\hfill\\
+	Let $W$ be a finite-dimensional subspace of an inner product space $V$, and let $y \in V$. Then there exist unique vectors $u \in W$ and $z \in W^\perp$ such that $y = u + z$. Furthermore, if $\{v_1, v_2, \dots, v_k\}$ is an orthonormal basis for $W$, then
+
+	\[u = \sum_{i=1}^{k}\lr{y,v_i}v_i.\]
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	In the notation of \autoref{Theorem 6.6}, the vector $u$ is the unique vector in $W$ that is ``closest" to $y$; that is, for any $x \in W$, $||y - x|| \geq ||y - u||$, and this inequality is an equality if and only if $x = u$.
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Suppose that $S = \{v_1, v_2, \dots, v_k\}$ is an orthonormal set in an $n$-dimensional inner product space $V$. Then
+
+	\begin{enumerate}
+		\item $S$ can be extended to an orthonormal basis $\{v_1, v_2, \dots, v_k, v_{k+1}, \dots, v_n\}$ for $V$.
+		\item If $W = \lspan{S}$, then $S_1 = \{v_{k+1}, v_{k+2}, \dots, v_n\}$ is an orthonormal basis for $W^\perp$ (using the preceding notation).
+		\item If $W$ is any subspace of $V$, then $\ldim{V} = \ldim{W} + \ldim{W^\perp}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}[\textbf{Parseval's Identity}]
+	\hfill\\
+	Let $V$ be a finite-dimensional inner product space over $\F$, and let $\{v_1, v_2, \dots, v_n\}$ be an orthonormal basis for $V$. Then for any $x,y \in V$,
+
+	\[\lr{x,y} = \sum_{i=1}^{n}\lr{x,v_i}\overline{\lr{y,v_i}}.\]
+\end{definition}
+
+\begin{definition}[\textbf{Bessel's Inequality}]
+	Let $V$ be an inner product space, and let $S = \{v_1, v_2, \dots, v_n\}$ be an orthonormal subset of $V$. For any $x \in V$,
+
+	\[||x||^2 \geq \sum_{i=1}^{n}|\lr{x,v_i}|^2.\]
+\end{definition}

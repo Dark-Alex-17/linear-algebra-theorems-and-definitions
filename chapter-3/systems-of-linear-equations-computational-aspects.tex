@@ -18,12 +18,12 @@
 \begin{definition}
 	\hfill\\
 	A matrix is said to be in \textbf{reduced row echelon form} if the following three conditions are satisfied.
-	
+
 	\begin{enumerate}
 		\item Any row containing a nonzero entry precedes any row in which all the entries are zero (if any).
-		
+
 		\item The first nonzero entry in each row is the only nonzero entry in its column.
-		
+
 		\item The first nonzero entry in each row is 1 and it occurs in a column to the right of the first nonzero entry in the preceding row.
 	\end{enumerate}
 \end{definition}
@@ -31,10 +31,10 @@
 \begin{definition}
 	\hfill\\
 	The following procedure for reducing an augmented matrix to reduced row echelon form is called \textbf{Gaussian elimination}. It consists of two separate parts.
-	
+
 	\begin{enumerate}
 		\item In the \textit{forward pass}, the augmented matrix is transformed into an upper triangular matrix in which the first nonzero entry of each row is $1$, and it occurs in a column to the right of the first nonzero entry in the preceding row.
-		
+
 		\item In the \textit{backward pass} or \textit{back-substitution}, the upper triangular matrix is transformed into reduced row echelon form by making the first nonzero entry of each row the only nonzero entry of its column.
 	\end{enumerate}
 \end{definition}
@@ -46,30 +46,30 @@
 
 \begin{definition}
 	A solution to a system of equations of the form
-	
+
 	\[s = s_0 + t_1u_1 + t_2u_2 + \dots +t_{n-r}u_{n-r},\]
-	
+
 	where $r$ is the number of nonzero solutions in $A'$ ($r \leq m$), is called a \textbf{general solution} of the system $Ax = b$. It expresses an arbitrary solution $s$ of $Ax = b$ in terms of $n - r$ parameters.
 \end{definition}
 
 \begin{theorem}
 	\hfill\\
 	Let $Ax = b$ be a system of $r$ nonzero equations in $n$ unknowns. Suppose that $\rank{A} = \rank{A|b}$ and that $(A|b)$ is in reduced row echelon form. Then
-	
+
 	\begin{enumerate}
 		\item $\rank{A} = r$.
 		\item If the general solution obtained by the procedure above is of the form
-		
-		\[s = s_0 + t_1u_1 + t_2u_2 + \dots + t_{n-r}u_{n-r},\]
-		
-		then $\{u_1, u_2, \dots, u_{n-r}\}$ is a basis for the solution set of the corresponding homogeneous system, and $s_0$ is a solution to the original system.
+
+		      \[s = s_0 + t_1u_1 + t_2u_2 + \dots + t_{n-r}u_{n-r},\]
+
+		      then $\{u_1, u_2, \dots, u_{n-r}\}$ is a basis for the solution set of the corresponding homogeneous system, and $s_0$ is a solution to the original system.
 	\end{enumerate}
 \end{theorem}
 
 \begin{theorem}
 	\hfill\\
 	Let $A$ be an $m \times n$ matrix of rank $r$, where $r > 0$, and let $B$ be the reduced row echelon form of $A$. Then
-	
+
 	\begin{enumerate}
 		\item The number of nonzero rows in $B$ is $r$.
 		\item For each $i = 1, 2, \dots, r$, there is a column $b_{j_i}$ of $B$ such that $b_{j_i} = e_i$.

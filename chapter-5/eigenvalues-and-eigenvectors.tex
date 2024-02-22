@@ -1,1 +1,64 @@
 \section{Eigenvalues and Eigenvectors}
+
+\begin{definition}
+	\hfill\\
+	A linear operator $T$ on a finite-dimensional vector space $V$ is called \textbf{diagonalizable} if there is an ordered basis $\beta$ for $V$ such that $[T]_\beta$ is a diagonal matrix. A square matrix $A$ is called \textbf{diagonalizable} if $L_A$ is diagonalizable.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $T$ be a linear operator on a vector space $V$. A nonzero vector $v \in V$ is called an \textbf{eigenvector} of $T$ if there exists a scalar $\lambda$ such that $T(v) = \lambda v$. The scalar $\lambda$ is called the \textbf{eigenvalue} corresponding to the eigenvector $v$.
+
+	Let $A$ be in $M_{n \times n}(\F)$. A nonzero vector $v \in \F^n$ is called an \textbf{eigenvector} of $A$ if $v$ is an eigenvector of $L_A$; that is, if $Av = \lambda v$ for some scalar $\lambda$. The scalar $\lambda$ is called the \textbf{eigenvalue} of $A$ corresponding to the eigenvector $v$.\\
+
+	The words \textit{characteristic vector} and \textit{proper vector} are also used in place of \textit{eigenvector}. The corresponding terms for \textit{eigenvalue} are \textit{characteristic value} and \textit{proper value}.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	A linear operator $T$ on a finite-dimensional vector space $V$ is diagonalizable if and only if there exists an ordered basis $\beta$ for $V$ consisting of eigenvectors of $T$. Furthermore, if $T$ is diagonalizable, $\beta = \{v_1, v_2, \dots, v_n\}$ is an ordered basis of eigenvectors of $T$, and $D=[T]_\beta$, then $D$ is a diagonal matrix and $D_{ij}$ is the eigenvalue corresponding to $v_j$ for $1 \leq j \leq n$.
+\end{theorem}
+
+\begin{remark}
+	\hfill\\
+	To \textit{diagonalize} a matrix or linear operator is to find a basis of eigenvectors and the corresponding eigenvalues.
+\end{remark}
+
+\begin{theorem}
+	\hfill\\
+	Let $A \in M_{n \times n}(\F)$. Then a scalar $\lambda$ is an eigenvalue of $A$ if and only if $\det(A - \lambda I_n) = 0$.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Let $A \in M_{n \times n}(\F)$. The polynomial $f(t) = \det(A - tI_n)$ is called the \textbf{characteristic polynomial} of $A$.\\
+
+	The observant reader may have noticed that the entries of the matrix $A - tI_n$ are not scalars in the field $\F$. They are, however, scalars in another field $\F(t)$, the field of quotients of polynomials in $t$ with coefficients from $\F$. Consequently, any results proved about determinants in \autoref{Chapter 4} remain valid in this context.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $T$ be a linear operator on an $n$-dimensional vector space $V$ with ordered basis $\beta$. We define the \textbf{characteristic polynomial} $f(t)$ of $T$ to be the characteristic polynomial of $A=[T]_\beta$. That is,
+
+	\[f(t) = \det(A - tI_n).\]
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $A \in M_{n \times n}(\F)$.
+
+	\begin{enumerate}
+		\item The characteristic polynomial of $A$ is a polynomial of degree $n$ with leading coefficient $(-1)^n$.
+		\item $A$ has at most $n$ distinct eigenvalues.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	Let $T$ be a linear operator on a vector space $V$, and let $\lambda$ be an eigenvalue of $T$. A vector $v$ is an eigenvector of $T$ corresponding to $\lambda$ if and only if $v \neq 0$ and $v \in \n{T - \lambda I)}$.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	A \textbf{scalar matrix} is a square matrix of the form $\lambda I$ for some scalar $\lambda$; that is, a scalar matrix is a diagonal matrix in which all the diagonal entries are equal.
+\end{definition}

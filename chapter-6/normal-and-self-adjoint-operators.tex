@@ -1,1 +1,65 @@
-\section{Normal and Self-Adjoing Operators}
+\section{Normal and Self-Adjoint Operators}
+
+\begin{lemma}
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional inner product space $V$. If $T$ has an eigenvector, then so does $T^*$.
+\end{lemma}
+
+\begin{theorem}[\textbf{Schur}]
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional inner product space $V$. Suppose that the characteristic polynomial of $T$ splits. Then there exists an orthonormal basis $\beta$ for $V$ such that the matrix $[T]_\beta$ is upper triangular.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be an inner product space, and let $T$ be a linear operator on $V$. We say that $T$ is \textbf{normal} if $TT^* = T^*T$. An $n \times n$ real or complex matrix $A$ is \textbf{normal} if $AA^* = A^*A$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ be an inner product space, and let $T$ be a normal operator on $V$. Then the following statements are true.
+
+	\begin{enumerate}
+		\item $||T(x)|| = ||T^*(x)||$ for all $x \in V$.
+		\item $T - cI$ is normal for every $c \in \F$.
+		\item If $x$ is an eigenvector of $T$, then $x$ is also an eigenvector of $T^*$. In fact, if $T(x) = \lambda x$, then $T^*(x) = \overline{\lambda}x$.
+		\item If $\lambda_1$ and $\lambda_2$ are distinct eigenvalues of $T$ with corresponding eigenvectors $x_1$ and $x_2$, then $x_1$ and $x_2$ are orthogonal.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional complex inner product space $V$. Then $T$ is normal if and only if there exists an orthonormal basis for $V$ consisting of eigenvectors of $T$.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Let $T$ be a linear operator on an inner product space $V$. We say that $T$ is \textbf{self-adjoint} (\textbf{Hermitian}) if $T = T^*$. An $n \times n$ real or complex matrix $A$ is \textbf{self-adjoint} (\textbf{Hermitian}) if $A = A^*$.
+\end{definition}
+
+\begin{lemma}
+	\hfill\\
+	Let $T$ be a self-adjoint operator on a finite-dimensional inner product space $V$. Then
+
+	\begin{enumerate}
+		\item Every eigenvalue of $T$ is real.
+		\item Suppose that $V$ is a real inner product space. Then the characteristic polynomial of $T$ splits.
+	\end{enumerate}
+\end{lemma}
+
+\begin{theorem}
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional real inner product space $V$. Then $T$ is self-adjoint if and only if there exists an orthonormal basis $\beta$ for $V$ consisting of eigenvectors of $T$.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	An $n \times n$ real matrix $A$ is said to be a \textbf{Gramian} matrix if there exists a real (square) matrix $B$ such that $A = B^tB$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A linear operator $T$ on a finite-dimensional inner product space is called \textbf{positive definite [positive semidefinite]} if $T$ is self-adjoint and $\lr{T(x),x} > 0$ [$\lr{T(x),x} \geq 0$] for all $x \neq 0$.
+
+	An $n \times n$ matrix $A$ with entries from $\R$ or $\C$ is called \textbf{positive definite [positive semidefinite]} if $L_A$ is positive definite [positive semidefinite].
+\end{definition}

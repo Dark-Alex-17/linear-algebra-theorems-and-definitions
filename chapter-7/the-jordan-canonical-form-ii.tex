@@ -1,1 +1,118 @@
 \section{The Jordan Canonical Form II}
+
+\begin{definition}
+	\hfill\\
+	For the purposes of this section, we fix a linear operator $T$ on an $n$-dimensional vector space $V$ such that the characteristic polynomial of $T$ splits. Let $\lambda_1, \lambda_2, \dots, \lambda_k$ be the distinct eigenvalues of $T$.\\
+
+	By \autoref{Theorem 7.7}, each generalized eigenspace $K_{\lambda_i}$ contains an ordered basis $\beta_i$ consisting of a union of disjoint cycles of generalized eigenvectors corresponding to $\lambda_i$. So by \autoref{Theorem 7.4}(2) and \autoref{Theorem 7.5}, the union $\beta = \displaystyle\bigcup_{i=1}^k \beta_i$ is a Jordan canonical basis for $T$. For each $i$, let $T_i$ be the restriction of $T$ to $K_{\lambda_i}$, and let $A_i = [T_i]_{\beta_i}$. Then $A_i$ is the Jordan canonical form of $T_{ij}$, and
+
+	\[J = [T]_\beta = \begin{pmatrix}
+			A_1    & O      & \dots & O      \\
+			O      & A_2    & \dots & O      \\
+			\vdots & \vdots &       & \vdots \\
+			O      & O      & \dots & A_k
+		\end{pmatrix}\]
+
+	is the Jordan canonical form of $T$. In this matrix, each $O$ is a zero matrix of appropriate size.\\
+
+	\textbf{Note:} In this section, we compute the matrices $A_i$ and the bases $\beta_i$, thereby computing $J$ and $\beta$ as well. To aid in formulating the uniqueness theorem for $J$, we adopt the following convention: The basis $\beta_i$ for $K_\lambda$ will henceforth be ordered in such a way that the cycles appear in order of decreasing length. That is, if $\beta_i$ is a disjoint union of cycles $\gamma_1, \gamma_2, \dots, \gamma_{n_i}$ and if the length of the cycle $\gamma_j$ is $p_j$, we index the cycles so that $p_1 \geq p_2 \geq \dots \geq p_{n_i}$.\\
+
+	To illustrate the discussion above, suppose that, for some $i$, the ordered basis $\beta_i$ for $K_{\lambda_i}$ is the union of four cycles $\beta_i = \gamma_1 \cup \gamma_2 \cup \gamma_3 \cup \gamma_4$ with respective lengths $p_1 = 3, p_2 = 3, p_3 = 2$, and $p_4 = 1$. Then
+
+	\[A_i = \left(\begin{array}{*9{c}}\
+				\cellcolor{Gray}\lambda_i & \cellcolor{Gray}1         & \cellcolor{Gray}0         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         \\
+				\cellcolor{Gray}0         & \cellcolor{Gray}\lambda_i & \cellcolor{Gray}1         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         \\
+				\cellcolor{Gray}0         & \cellcolor{Gray}0         & \cellcolor{Gray}\lambda_i & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         \\
+				0                         & 0                         & 0                         & \cellcolor{Gray}\lambda_i & \cellcolor{Gray}1         & \cellcolor{Gray}0         & 0                         & 0                         & 0                         \\
+				0                         & 0                         & 0                         & \cellcolor{Gray}0         & \cellcolor{Gray}\lambda_i & \cellcolor{Gray}1         & 0                         & 0                         & 0                         \\
+				0                         & 0                         & 0                         & \cellcolor{Gray}0         & \cellcolor{Gray}0         & \cellcolor{Gray}\lambda_i & 0                         & 0                         & 0                         \\
+				0                         & 0                         & 0                         & 0                         & 0                         & 0                         & \cellcolor{Gray}\lambda_i & \cellcolor{Gray}1         & 0                         \\
+				0                         & 0                         & 0                         & 0                         & 0                         & 0                         & \cellcolor{Gray}0         & \cellcolor{Gray}\lambda_i & 0                         \\
+				0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & 0                         & \cellcolor{Gray}\lambda_i
+			\end{array}\right)\]
+
+	To help us visualize each of the matrices $A_i$ and ordered bases $\beta_i$, we use an array of dots called a \textbf{dot diagram} of $T_i$, where $T_i$ is the restriction of $T$ to $K_{\lambda_i}$. Suppose that $\beta_i$ is a disjoint union of cycles of generalized eigenvectors $\gamma_1, \gamma_2, \dots, \gamma_{n_i}$ with lengths $p_1 \geq p_2 \geq \dots \geq p_{n_i}$, respectively. The dot diagram of $T_i$ contains one dot for each vector in $\beta_i$, and the dots are configured according to the following rules.
+
+	\begin{enumerate}
+		\item The array consists of $n_i$ columns (one column for each cycle).
+		\item Counting from left to right, the $j$th column consists of the $p_j$ dots that correspond to the vectors of $\gamma_j$ starting with the initial vector at the top and continuing down to the end vector.
+	\end{enumerate}
+
+	Denote the end vectors of the cycles by $v_1, v_2, \dots, v_{n_i}$. In the following dot diagram of $T_i$, each dot is labeled with the name of the vector in $\beta_i$ to which it corresponds.
+
+	\[\begin{array}{llll}
+			\bullet(T - \lambda_i I)^{p_1 - 1}(v_1) & \bullet(T - \lambda_i I)^{p_2-1}(v_2)  & \dots & \bullet (T-\lambda_i I)^{p_{n_i} - 1}(v_{n_i})  \\
+			\bullet(T - \lambda_i I)^{p_1 - 2}(v_1) & \bullet(T - \lambda_i I)^{p2 - 2}(v_2) & \dots & \bullet(T - \lambda_i I)^{p_{n_i} - 2}(v_{n_i}) \\
+			\vdots                                  & \vdots                                 &       & \vdots                                          \\
+			                                        &                                        &       & \bullet(T - \lambda_i I)(v_{n_i})               \\
+			                                        &                                        &       & \bullet(v_{n_i})                                \\
+			                                        & \bullet(T - \lambda_i I)(v_2)          &       &                                                 \\
+			                                        & \bullet v_2                            &       &                                                 \\
+			\bullet(T - \lambda_i I)(v_1)           &                                        &                                                         \\
+			\bullet v_1
+		\end{array}\]
+
+	Notice that the dot diagram of $T_i$ has $n_i$ columns (one for each cycle) and $p_1$ rows. Since $p_1 \geq p_2 \geq \dots \geq p_{n_i}$, the columns of the dot diagram become shorter (or at least not longer) as we move from left to right.
+
+	Now let $r_j$ denote the number of dots in the $j$th row of the dot diagram. Observe that $r_1 \geq r_2 \geq \dots \geq r_{p_1}$. Furthermore, the diagram can be reconstructed from the values of the $r_i$'s.\\
+
+	In the above example, with $n_i = 4$, $p_1 = p_2 = 3$, $p_3 = 2$, and $p_4 = 1$, the dot diagram of $T_i$ is as follows:
+
+	\[\begin{array}{llll}
+			\bullet & \bullet & \bullet & \bullet \\
+			\bullet & \bullet & \bullet &         \\
+			\bullet & \bullet &         &
+		\end{array}\]
+
+	Here $r_1 = 4$, $r_2 = 3$ and $r_3 = 2$.
+
+	We now devise a method for computing the dot diagram of $T_i$ using the ranks of linear operators determined by $T$ and $\lambda_i$. Hence the dot diagram is completely determined by $T$, from which it follows that it is unique. On the other hand $\beta_i$ is not unique.
+
+	To determine the dot diagram of $T_i$, we devise a method for computing each $r_j$, the number of dots in the $j$th row of the dot diagram, using only $T_i$ and $\lambda_i$. The next three result give us the required method. To facilitate our arguments, we fix a basis $\beta_i$ for $K_{\lambda_i}$ so that $\beta_i$ is a disjoint union of $n_i$ cycles of generalized eigenvectors with lengths $p_1 \geq p_2 \geq \dots \geq p_{n_i}$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	For any positive integer $r$, the vectors in $\beta_i$ that are associated with the dots in the first $r$ rows of the dot diagram of $T_i$ constitute a basis for $\n{(T - \lambda_i I)^r}$. Hence the number of dots in the first $r$ rows of the dot diagram equals $\nullity{(T - \lambda_i I)^r}$.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	The dimension of $E_{\lambda_i}$ is $n_i$. Hence in a Jordan canonical form of $T$, the number of Jordan blocks corresponding to $\lambda_i$ equals the dimension of $E_{\lambda_i}$.
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Let $r_j$ denote the number of dots in the $j$th row of the dot diagram of $T_i$, the restriction of $T$ to $K_{\lambda_i}$. Then the following statements are true.
+
+	\begin{enumerate}
+		\item $r_1 = \ldim{V} - \rank{T - \lambda_i I}$.
+		\item $r_j = \rank{(T - \lambda_i I)^{j - 1}} - \rank{(T - \lambda_i I)^j}$ if $j > 1$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	For any eigenvalue $\lambda_i$ of $T$, the dot diagram of $T_i$ is unique. Thus, subject to the convention that cycles of generalized eigenvectors for the bases of each generalized eigenspace are listed in order of decreasing length, the Jordan canonical form of a linear operator or a matrix is unique up to the ordering of the eigenvalues.
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Let $A$ and $B$ be $n \times n$ matrices, each having Jordan canonical forms computed according to the conventions of this section. Then $A$ and $B$ are similar if and only if they have (up to an ordering of their eigenvalues) the same Jordan canonical form.
+\end{theorem}
+
+\begin{lemma}
+	A linear operator $T$ on a finite-dimensional vector space $V$ is diagonalizable if and only if its Jordan canonical form is a diagonal matrix. Hence $T$ is diagonalizable if and only if the Jordan canonical basis for $T$ consists of eigenvectors of $T$.
+\end{lemma}
+
+\begin{definition}
+	\hfill\\
+	A linear operator $T$ on a vector space $V$ is called \textbf{nilpotent} if $T^p = T_0$ for some positive integer $p$. An $n \times n$ matrix $A$ is called \textbf{nilpotent} if $A^p = O$ for some positive integer $p$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	For any $A \in M_{n \times n}(\C)$, define the norm of $A$ by
+
+	\[||A|| = \max \{|A_{ij}| : 1 \leq i, j \leq n\}.\]
+\end{definition}

@@ -3,21 +3,21 @@
 \begin{definition}
 	\hfill\\
 	The \textbf{determinant} of an $n \times n$ matrix $A$ having entries from a field $\F$ is a scalar in $\F$, denoted by $\det(A)$ or $|A|$, and can be computed in the following manner:
-	
+
 	\begin{enumerate}
 		\item If $A$ is $1 \times 1$, then $\det(A) = A_{11}$, the single entry of $A$.
 		\item If $A$ is $2 \times 2$, then $\det(A) = A_{11}A_{22} - A_{12}A_{21}$.
 		\item If $A$ is $n \times n$ for $n > 2$, then
-		
-		\[\det(A) = \sum_{j=1}^{n}(-1)^{i+j}A_{ij}\cdot\det(\tilde{A}_{ij})\]
-		
-		(if the determinant is evaluated by the entries of row $i$ of $A$) or
-		
-		\[\det(A) = \sum_{i=1}^{n}(-1)^{i+j}A_{ij}\cdot\det(\tilde{A}_{ij})\]
-		
-		(if the determinant is evaluated by the entries of column $j$ of $A$), where $\tilde{A}_{ij}$ is the $(n-1) \times (n-1)$ matrix obtained by deleting row $i$ and column $j$ from $A$.
+
+		      \[\det(A) = \sum_{j=1}^{n}(-1)^{i+j}A_{ij}\cdot\det(\tilde{A}_{ij})\]
+
+		      (if the determinant is evaluated by the entries of row $i$ of $A$) or
+
+		      \[\det(A) = \sum_{i=1}^{n}(-1)^{i+j}A_{ij}\cdot\det(\tilde{A}_{ij})\]
+
+		      (if the determinant is evaluated by the entries of column $j$ of $A$), where $\tilde{A}_{ij}$ is the $(n-1) \times (n-1)$ matrix obtained by deleting row $i$ and column $j$ from $A$.
 	\end{enumerate}
-	
+
 	In the formulas above, the scalar $(-1)^{i+j}\det(\tilde{A}_{ij})$ is called the \textbf{cofactor} of the row $i$ column $j$ of $A$.
 \end{definition}
 

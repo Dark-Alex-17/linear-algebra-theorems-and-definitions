@@ -1,1 +1,223 @@
 \section{Matrix Limits and Markov Chains}
+
+\begin{definition}
+	\hfill\\
+	Let $L, A_1, A_2, \dots$ be $n \times p$ matrices having complex entries. The sequence $A_1, A_2, \dots$ is said to \textbf{converge} to the $n \times p$ matrix $L$, called the \textbf{limit} of the sequence, if
+
+	\[\lim_{m \to \infty}(A_m)_{ij} = L_{ij}\]
+
+	for all $1 \leq i \leq n$ and $1 \leq j \leq p$. To designate that $L$ is the limit of the sequence, we write
+
+	\[\lim_{m \to \infty}A_m = L.\]
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $A_1, A_2, \dots$ be a sequence of $n \times p$ matrices with complex entries that converges to the matrix $L$. Then for any $P \in M_{r \times n}(\C)$ and $Q \in M_{p \times s}(\C)$,
+
+	\[\lim_{m \to \infty}PA_m = PL\ \ \ \ \text{and}\ \ \ \ \lim_{m \to \infty}A_mQ = LQ.\]
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $A \in M_{n \times n}(\C)$ be such that $\displaystyle\lim_{m \to \infty}A^m = L$. Then for any invertible matrix $Q \in M_{n \times n}(\C)$,
+
+	\[\lim_{m \to \infty}(QAQ^{-1})^m = QLQ^{-1}.\]
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Let $A$ be a square matrix with complex entries. Then $\displaystyle\lim_{m \to \infty}A^m$ exists if and only if both of the following conditions hold.
+
+	\begin{enumerate}
+		\item Every eigenvalue of $A$ is contained in $S$.
+		\item If $1$ is an eigenvalue of $A$, then the dimension of the eigenspace corresponding to $1$ equals the multiplicity of $1$ as an eigenvalue of $A$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	Let $A \in M_{n \times n}(\C)$ satisfy the following two conditions.
+
+	\begin{enumerate}
+		\item Every eigenvalue of $A$ is contained in $S$.
+		\item $A$ is diagonalizable.
+	\end{enumerate}
+
+	Then $\displaystyle\lim_{m \to \infty}A^m$ exists.
+\end{theorem}
+
+\begin{definition}
+	Any square matrix having the following two properties is called a \textbf{transition matrix} or a \textbf{stochastic matrix}.
+
+	\begin{enumerate}
+		\item All entries are non-negative
+		\item The sum of entries in each column sums up to $1$.
+	\end{enumerate}
+
+	For an arbitrary $n \times n$ transition matrix $M$, the rows and columns correspond to $n$ \textbf{states}, and the entry $M_{ij}$ represents the probability of moving from state $j$ to state $i$ in one \textbf{stage}.
+\end{definition}
+
+\begin{definition}
+	A vector with non-negative entries that add up to $1$ is called a \textbf{probability vector}.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $M$ be an $n \times n$ matrix having real non-negative entries, let $v$ be a column vector in $\R^n$ having non-negative coordinates, and let $u \in \R^n$ be the column vector in which each coordinate equals $1$. Then
+
+	\begin{enumerate}
+		\item $M$ is a transition matrix if and only if $M^tu = u$;
+		\item $v$ is a probability vector if and only if $u^tv = (1)$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	\begin{enumerate}
+		\item[]
+		\item The product of two $n \times n$ transition matrices is an $n \times n$ transition matrix. In particular, any power of a transition matrix is a transition matrix.
+		\item The product of a transition matrix and a probability vector is a probability vector.
+	\end{enumerate}
+\end{corollary}
+
+\begin{definition}
+	A process in which elements of a set are each classified as being in one of several fixed states that can switch over time is called a \textbf{stochastic process}. The switching to a particular state is described by the probability, and in general this probability depends on such factors as the state in question, the time in question, some or all of the previous states in which the object has been (including the current state), and the states that other objects are in or have been in.\\
+
+	If, however, the probability that an object in one state changes to a different state in a fixed interval of time depends only on the two states (and not on the time, earlier states, or other factors), then the stochastic process is called a \textbf{Markov process}. If, in addition, the number of possible states is finite, then the Markov process is called a \textbf{Markov chain}.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	The vector that describes the initial probability of being in each state of a Markov chain is called the \textbf{initial probability vector} for the Markov chain.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A transition matrix is called \textbf{regular} if some power of the matrix contains only positive entries.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $A \in M_{n \times n}(\C)$. For $1 \leq i, j \leq n$, define $\rho_i(A)$ to be the sum of the absolute values of the entries of row $i$ of $A$, and define $\nu_j(A)$ to be equal to the sum of the absolute values of the entries of column $j$ and $A$. Thus
+
+	\[\rho_i(A) = \sum_{j=1}^{n}|A_{ij}|\ \ \text{for}\ i=1, 2, \dots, n\]
+
+	and
+
+	\[\nu_j(A) = \sum_{i=1}^{n}|A_{ij}|\ \ \text{for}\ j=1, 2, \dots n.\]
+
+	The \textbf{row sum} of $A$, denoted $\rho(A)$, and the \textbf{column sum} of $A$, denoted $\nu(A)$, are defined as
+
+	\[\rho(A) = \max\{\rho_i(A) : 1 \leq i \leq n\}\ \ \ \ \text{and}\ \ \ \ \nu(A) = \max\{\nu_j(A) : 1 \leq j \leq n\}.\]
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	For an $n \times n$ matrix $A$, we define the $i$th \textbf{Gerschgorin disk} $\C_i$ to be the disk in the complex plane with center $A_{ij}$ and radius $r_i = \rho_i(A) - |A_{ii}|$; that is,
+
+	\[\C_i = \{z \in \C:|z - A_{ii}| < r_i\}\]
+\end{definition}
+
+\begin{theorem}[\textbf{Gerschgorin's Disk Theorem}]
+	\hfill\\
+	Let $A \in M_{n \times n}(\C)$. Then ever eigenvalue of $A$ is contained in a Gerschgorin disk.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $\lambda$ be any eigenvalue of $A \in M_{n \times n}(\C)$. Then $|\lambda| \leq \rho(A)$.
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	Let $\lambda$ be any eigenvalue of $A \in M_{n \times n}(\C)$. Then
+
+	\[|\lambda| \leq \min\{\rho(A), \nu(A)\}.\]
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	If $\lambda$ is an eigenvalue of a transition matrix, then $|\lambda| \leq 1$.
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Every transition matrix has $1$ as an eigenvalue.
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	Let $A \in M_{n \times n}(\C)$ be a matrix in which each entry is positive, and let $\lambda$ be an eigenvalue of $A$ such that $|\lambda| = \rho(A)$. Then $\lambda = \rho(A)$ and $\{u\}$ is a basis for $E_\lambda$, where $u \in \mathsf{C}^n$ is the column vector in which each coordinate equals 1.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $A \in M_{n \times n}(\C)$ be a matrix in which each entry is positive, and let $\lambda$ be an eigenvalue of $A$ such that $|\lambda| = \nu(A)$. Then $\lambda = \nu(A)$, and the dimension of $E_\lambda = 1$.
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	Let $A \in M_{n \times n}(\C)$ be a transition matrix in which each entry is positive, and let $\lambda$ be any eigenvalue of $A$ other than $1$. Then $|\lambda| < 1$. Moreover, the eigenspace corresponding to the eigenvalue $1$ has dimension $1$.
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Let $A$ be a regular transition matrix, and let $\lambda$ be an eigenvalue of $A$. Then
+
+	\begin{enumerate}
+		\item $|\lambda| \leq 1$.
+		\item If $|\lambda| = 1$, then $\lambda = 1$, and $\ldim{E_\lambda} = 1$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $A$ be a regular transition matrix that is diagonalizable. Then $\displaystyle\lim_{m \to \infty}A^m$ exists.
+\end{corollary}
+
+\begin{theorem}\label{Theorem 5.20}
+	\hfill\\
+	Let $A$ be an $n \times n$ regular transition matrix. Then
+
+	\begin{enumerate}
+		\item The multiplicity of $1$ as an eigenvalue of $A$ is $1$.
+		\item $\displaystyle\lim_{m \to \infty}A^m$ exists.
+		\item $\L = \displaystyle\lim_{m \to \infty}A^m$ is a transition matrix.
+		\item $AL = LA = L$.
+		\item The columns of $L$ are identical. In fact, each column of $L$ is equal to the unique probability vector $v$ that is also an eigenvector of $A$ corresponding to the eigenvalue $1$.
+		\item For any probability vector $w$, $\displaystyle\lim_{m \to \infty}(A^mw) = v$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	The vector $v$ in \autoref{Theorem 5.20}(5) is called the \textbf{fixed probability vector} or \textbf{stationary vector} of the regular transition matrix $A$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Consider transition matrices that can be represented in the following form:
+
+	\[\begin{pmatrix}
+			I & B  \\
+			O & \C
+		\end{pmatrix}\]
+
+	where $I$ is an identity matrix and $O$ is a zero matrix. (Such transition matrices are not regular since the lower left block remains $O$ in any power of the matrix.) The states corresponding to the identity submatrix are called \textbf{absorbing states} because such a state is never left once it is entered. A Markov chain is called an \textbf{absorbing Markov chain} if it is possible to go from an arbitrary state into an absorbing state in a finite number of stages.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	For $A \in M_{n \times n}(\C)$, define $e^A = \displaystyle\lim_{m \to \infty}B_m$, where
+
+	\[B_m = I + A + \frac{A^2}{2!} + \dots + \frac{A^m}{m!}\]
+
+	Thus $e^A$ is the sum of the infinite series
+
+	\[I + A + \frac{A^2}{2!} + \frac{A^3}{3!} + \dots,\]
+
+	and $B_m$ is the $m$th partial sum of this series. (Note the analogy with the power series
+
+	\[e^a = 1 + a + \frac{a^2}{2!}+\frac{a^3}{3!}+\dots,\]
+	which is valid for all complex numbers $a$.)
+\end{definition}

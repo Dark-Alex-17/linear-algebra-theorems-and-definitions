@@ -1,1 +1,130 @@
 \section{Unitary and Orthogonal Operators and Their Matrices}
+
+\begin{definition}
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional inner product space $V$ (over $\F$). If $||T(x)|| = ||x||$ for all $x \in V$, we call $T$ a \textbf{unitary operator} if $\F = \C$ and an \textbf{orthogonal operator} if $\F = \R$.\\
+
+	It should be noted that, in the infinite-dimensional case, an operator satisfying the preceding norm requirement is generally called an \textbf{isometry}. If, in addition, the operator is onto (the condition guarantees one-to-one), then the operator is called a \textbf{unitary} or \textbf{orthogonal operator},
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional inner product space $V$. Then the following statements are equivalent.
+
+	\begin{enumerate}
+		\item $TT^* = T^*T = I$.
+		\item $\lr{T(x), T(y)} = \lr{x,y}$ for all $x,y \in V$.
+		\item If $\beta$ is an orthonormal basis for $V$, then $T(\beta)$ is an orthonormal basis for $V$.
+		\item There exists an orthonormal basis $\beta$ for $V$ such that $T(\beta)$ is an orthonormal basis for $V$.
+		\item $||T(x)|| = ||x||$ for all $x \in V$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+	\hfill\\
+	Let $U$ be a self-adjoint operator on a finite-dimensional inner product space $V$. If $\lr{x,U(x)} = 0$ for all $x \in V$, then $U = T_0$.
+\end{lemma}
+
+\begin{corollary}
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional real inner product space $V$. Then $V$ has an orthonormal basis of eigenvectors of $T$ with corresponding eigenvalues of absolute value $1$ if and only if $T$ is both self-adjoint and orthogonal.
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional complex inner product space $V$. Then $V$ has an orthonormal basis of eigenvectors of $T$ with corresponding eigenvalues of absolute value $1$ if and only if $T$ is unitary.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $L$ be a one-dimensional subspace of $\R^2$. We may view $L$ as a line in the plane through the origin. A linear operator $T$ on $\R^2$ is called a \textbf{reflection of $\R^2$ about $L$} if $T(x) = x$ for all $x \in L$ and $T(x) = -x$ for all $x \in L^\perp$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	A square matrix $A$ is called an \textbf{orthogonal matrix} if $A^tA = AA^t = I$ and \textbf{unitary} if $A^*A = AA^* = I$.\\
+
+	Since for a real matrix $A$ we have $A^* = A^t$, a real unitary matrix is also orthogonal. In this case, we call $A$ \textbf{orthogonal} rather than unitary.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	We know that, for a complex normal [real symmetric] matrix $A$, there exists an orthonormal basis $\beta$ for $F^n$ consisting of eigenvectors of $A$. Hence $A$ is similar to a diagonal matrix $D$. By \autoref{Corollary 2.8}, the matrix $Q$ whose columns are the vectors in $\beta$ is such that $D = Q^{-1}AQ$. But since the columns of $Q$ are an orthonormal basis for $F^n$, it follows that $Q$ is unitary [orthogonal]. In this case, we say that $A$ is \textbf{unitarily equivalent} [\textbf{orthogonally equivalent}] to $D$. It is easily seen that this relation is an equivalence relation on $M_{n \times n}(\C)$ [$M_{n \times n}(\R)$]. More generally, \textit{$A$ and $B$ are unitarily equivalent [orthogonally equivalent]} if and only if there exists a unitary [orthogonal] matrix $P$ such that $A = P^*BP$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $A$ be a complex $n \times n$ matrix. Then $A$ is normal if and only if $A$ is unitarily equivalent to a diagonal matrix.
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	Let $A$ be a real $n \times n$ matrix. Then $A$ is symmetric if and only if $A$ is orthogonally equivalent to a real diagonal matrix.
+\end{theorem}
+
+\begin{theorem}[\textbf{Schur}]
+	\hfill\\
+	Let $A \in M_{n \times n}(\F)$ be a matrix whose characteristic polynomial splits over $\F$.
+
+	\begin{enumerate}
+		\item If $\F = \C$, then $A$ is unitarily equivalent to a complex upper triangular matrix.
+		\item If $\F = \R$, then $A$ is orthogonally equivalent to a real upper triangular matrix.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be a real inner product space. A function $f: V \to V$ is called a \textbf{rigid motion} if
+
+	\[||f(x) - f(y)|| = ||x - y||\]
+
+	for all $x,y \in V$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be a real inner product space. A function $g: V \to V$ is called a \textbf{translation} if there exists a vector $v_0 \in V$ such that $g(x) = x + v_0$ for all $x \in V$. We say that $g$ is the \textit{translation by $v_0$}.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $f: V \to V$ be a rigid motion on a finite-dimensional real inner product space $V$. Then there exists a unique orthogonal operator $T$ on $V$ and a unique translation $g$ on $V$ such that $f = g \circ T$.
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	Let $T$ be an orthogonal operator on $\R^2$, and let $A = [T]_\beta$ where $\beta$ is the standard ordered basis for $\R^2$. Then exactly one of the following conditions is satisfied:
+
+	\begin{enumerate}
+		\item $T$ is a rotation, and $\det(A) = 1$.
+		\item $T$ is a reflection about a line through the origin, and $\det(A) = -1$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Any rigid motion on $\R^2$ is either a rotation followed by a translation or a reflection about a line through the origin followed by a translation.
+\end{corollary}
+
+\begin{definition}
+	Consider the quadratic equation
+
+	\begin{equation}\label{eq:quad}
+		ax^2 + 2bxy + cy^2 +dx + ey + f = 0.
+	\end{equation}
+
+	The expression
+
+	\[ax^2 + 2bxy + cy^2\]
+
+	is called the \textbf{associated quadratic form} of \eqref{eq:quad}
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be a finite-dimensional inner product space. A linear operator $U$ on $V$ is called a \textbf{partial isometry} if there exists a subspace $W$ of $V$ such that $||U(x)|| = ||x||$ for all $x \in W$ and $U(x) = 0$ for all $x \in W^\perp$.
+\end{definition}
+
+\begin{definition}
+	Let $V$ be a finite-dimensional complex [real] inner product space, and let $u$ be a unit vector in $V$. Define the \textbf{Householder} operator $\mathsf{H}_u: V \to V$ by $\mathsf{H}_u(x) = x-2\lr{x,u}u$ for all $x \in V$.
+\end{definition}

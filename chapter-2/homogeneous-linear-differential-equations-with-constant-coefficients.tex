@@ -3,35 +3,35 @@
 \begin{definition}
 	\hfill\\
 	A \textbf{differential equation} in an unknown function $y = y(t)$ is an equation involving $y$, $t$, and derivatives of $y$. If the differential equation is of the form
-	
+
 	\begin{equation}
 		a_ny^{(n)}+a_{n-1}y^{(n-)} + \dots + a_1y^{(1)}+a_0y = f,
 	\end{equation}
-	
+
 	where $a_0, a_1, \dots, a_n$ and $f$ are functions of $t$ and $y^{(k)}$ denotes the $k$th derivative of $y$, then the equation is said to be \textbf{linear}. The functions $a_i$ are called the \textbf{coefficients} of the differential equation. When $f$ is identically zero, (2.1) is called \textbf{homogeneous}.\\
-	
+
 	If $a_n \neq 0$, we say that differential equation (2.1) is of \textbf{order \textit{n}}. In this case, we divide both sides by $a_n$ to obtain a new, but equivalent, equation
-	
+
 	\[y^{(n)} + b_{n-1}y^{(n-1)} + \dots + b_1y^{(1)} + b_0y = 0,\]
-		
+
 	where $b_i = a_i/a_n$ for $i=0, 1, \dots, n-1$. Because of this observation, we always assume that the coefficient $a_n$ in (2.1) is $1$.\\
-	
+
 	A \textbf{solution} to (2.1) is a function that when substituted for $y$ reduces (2.1) to an identity.
 \end{definition}
 
 \begin{definition}
 	\hfill\\
 	Given a complex-valued function $x \in \mathcal{F}(\R, \C)$ of a real variable $t$ (where $\mathcal{F}(\R, \C)$ is the vector space defined in \autoref{Definition 1.7}), there exist unique real-valued functions $x_1$ and $x_2$ of $t$, such that
-	
+
 	\[x(t) = x_1(t) + ix_2(t)\ \ \ \text{for}\ \ \ t \in \R,\]
-	
+
 	where $i$ is the imaginary number such that $i^2 = -1$. We call $x_1$ the \textbf{real part} and $x_2$ the \textbf{imaginary part} of $x$.
 \end{definition}
 
 \begin{definition}
 	\hfill\\
 	Given a function $x \in \mathcal{F}(\R, \C)$ with real part $x_1$ and imaginary part $x_2$, we say that $x$ is \textbf{differentiable} if $x_1$ and $x_2$ are differentiable. If $x$ is differentiable, we define the \textbf{derivative} $x'$ of $x$ by
-	
+
 	\[x' = x'_1 + ix'_2\]
 \end{definition}
 
@@ -47,25 +47,25 @@
 
 \begin{definition}
 	\hfill\\
-	For any polynomial $p(t)$ over $\C$ of positive degree, $p(D)$ is called a \textbf{differential operator}. The \textbf{order} of the differential operator $p(D)$ is the degree of the polynomial $p(t)$.
+	For any polynomial $p(t)$ over $\C$ of positive degree, $p(\mathsf{D})$ is called a \textbf{differential operator}. The \textbf{order} of the differential operator $p(\mathsf{D})$ is the degree of the polynomial $p(t)$.
 \end{definition}
 
 \begin{definition}
 	\hfill\\
 	Given the differential equation
-	
+
 	\[y^{(n)} + a_{n-1}y^{(n-1)}+ \dots + a_1y^{(1)} + a_0y = 0,\]
-	
-	the complex polynomial 
-	
+
+	the complex polynomial
+
 	\[p(t) = t^n + a_{n-1}t^{n-1} + \dots + a_1t + a_0\]
-	
+
 	is called the \textbf{auxiliary polynomial} associated with the equation.
 \end{definition}
 
 \begin{theorem}
 	\hfill\\
-	The set of all solutions to a homogeneous linear differential equation with constant coefficients coincides with the null space of $p(D)$ where $p(t)$ is the auxiliary polynomial associated with the equation.
+	The set of all solutions to a homogeneous linear differential equation with constant coefficients coincides with the null space of $p(\mathsf{D})$ where $p(t)$ is the auxiliary polynomial associated with the equation.
 \end{theorem}
 
 \begin{corollary}
@@ -81,13 +81,13 @@
 \begin{definition}
 	\hfill\\
 	Let $c = a+ib$ be a complex number with real part $a$ and imaginary part $b$. Define
-	
+
 	\[e^c = e^a(\cos(b) + i\sin(b)).\]
-	
+
 	The special case
-	
+
 	\[e^{ib} = \cos(b) + i\sin(a)\]
-	
+
 	is called \textbf{Euler's formula}.
 \end{definition}
 
@@ -104,17 +104,17 @@
 \begin{theorem}
 	\hfill\\
 	Recall that the \textbf{order} of a homogeneous linear differential equation is the degree of its auxiliary polynomial. Thus, an equation of order 1 is of the form
-	
+
 	\begin{equation}
 		y' + a_0y = 0.
 	\end{equation}
-	
+
 	The solution space for (2.2) is of dimension 1 and has $\{e^{-a_0t}\}$ as a basis.
 \end{theorem}
 
 \begin{corollary}
 	\hfill\\
-	For any complex number $c$, the null space of the differential operator $D-c\mathsf{l}$ has $\{e^{ct}\}$ as a basis.
+	For any complex number $c$, the null space of the differential operator $\mathsf{D}-cI$ has $\{e^{ct}\}$ as a basis.
 \end{corollary}
 
 \begin{theorem}
@@ -124,18 +124,18 @@
 
 \begin{theorem}
 	\hfill\\
-	For any differential operator $p(D)$ of order $n$, the null space of $p(D)$ is an $n$-dimensional subspace of $\C^\infty$.
+	For any differential operator $p(\mathsf{D})$ of order $n$, the null space of $p(\mathsf{D})$ is an $n$-dimensional subspace of $\C^\infty$.
 \end{theorem}
 
 \begin{lemma}
 	\hfill\\
-	The differential operator $D - c\mathsf{l}: \C^\infty \to \C^\infty$ is onto for any complex number $c$.
+	The differential operator $\mathsf{D} - cI: \C^\infty \to \C^\infty$ is onto for any complex number $c$.
 \end{lemma}
 
 \begin{lemma}
 	\hfill\\
 	Let $V$ be a vector space, and suppose that $T$ and $U$ are linear operators on $V$ such that $U$ is onto and the null spaces of $T$ and $U$ are finite-dimensional. Then the null space of $TU$ is finite-dimensional, and
-	
+
 	\[\ldim{\n{TU}} = \ldim{\n{T}} + \ldim{\n{U}}\]
 \end{lemma}
 
@@ -157,28 +157,28 @@
 \begin{lemma}
 	\hfill\\
 	For a given complex number $c$ and a positive integer $n$, suppose that $(t-c)^n$ is the auxiliary polynomial of a homogeneous linear differential equation with constant coefficients. Then the set
-	
+
 	\[\beta = \{e^{ct}, te^{ct}, \dots, t^{n-1}e^{ct}\}\]
-	
+
 	is a basis for the solution space of the equation.
 \end{lemma}
 
 \begin{theorem}
 	\hfill\\
 	Given a homogeneous linear differential equation with constant coefficients and auxiliary polynomial
-	
+
 	\[(t-c_1)^{n_1}(t-c_2)^{n_2}\dots(t-c_k)^{n_k},\]
-	
+
 	where $n_1, n_2, \dots, n_k$ are positive integers and $c_1, c_2, \dots, c_k$ are distinct complex numbers, the following set is a basis for the solution space of the equation:
-	
+
 	\[\{e^{c_1t}, te^{c_1t},\dots, t^{n_1-1}e^{c_1t}, \dots, e^{c_kt}, te^{c_kt}, \dots, t^{n_k-1}e^{c_kt}\}\]
 \end{theorem}
 
 \begin{definition}
 	\hfill\\
 	A differential equation
-	
+
 	\[y^{(n)} + a_{n-1}y^{(n-1)} + \dots + a_1y^{(1)} + a_0y = x\]
-	
+
 	is called a \textbf{nonhomogeneous} linear differential equation with constant coefficients if the $a_i$'s are constant and $x$ is a function that is not identically zero.
 \end{definition}

@@ -3,15 +3,15 @@
 \begin{definition}
 	\hfill\\
 	A function $\delta: M_{n \times n}(\F) \to \F$ is called an \textbf{\textit{n}-linear function} if it is a linear function of each row of an $n \times n$ matrix when the remaining $n-1$ rows are held fixed, that is, $\delta$ is $n$-linear if, for every $r = 1, 2, \dots, n$, we have
-	
+
 	\[\delta\begin{pmatrix}
-		a_1 \\ \vdots \\ a_{r-1} \\ u+kv \\ a_{r + 1} \\ \vdots \\ a_n
-	\end{pmatrix} = \delta\begin{pmatrix}
-	a_1 \\ \vdots \\ a_{r-1} \\ u \\ a_{r + 1} \\ \vdots \\ a_n
-	\end{pmatrix} + k\delta\begin{pmatrix}
-	a_1 \\ \vdots \\ a_{r-1} \\ v \\ a_{r+1} \\ \vdots \\ a_n
-	\end{pmatrix}\]
-	
+			a_1 \\ \vdots \\ a_{r-1} \\ u+kv \\ a_{r + 1} \\ \vdots \\ a_n
+		\end{pmatrix} = \delta\begin{pmatrix}
+			a_1 \\ \vdots \\ a_{r-1} \\ u \\ a_{r + 1} \\ \vdots \\ a_n
+		\end{pmatrix} + k\delta\begin{pmatrix}
+			a_1 \\ \vdots \\ a_{r-1} \\ v \\ a_{r+1} \\ \vdots \\ a_n
+		\end{pmatrix}\]
+
 	whenever $k$ is a scalar and $u,v$ and each $a_i$ are vectors in $\F^n$.
 \end{definition}
 
@@ -23,7 +23,7 @@
 \begin{theorem}
 	\hfill\\
 	Let $\delta: M_{n \times n}(\F) \to \F$ be an alternating $n$-linear function.
-	
+
 	\begin{enumerate}
 		\item If $A \in M_{n \times n}(\F)$ and $B$ is a matrix obtained from $A$ by interchanging any two rows of $A$, then $\delta(B) = -\delta(A)$.
 		\item If $A \in M_{n \times n}(\F)$ has two identical rows, then $\delta(A) = 0$.

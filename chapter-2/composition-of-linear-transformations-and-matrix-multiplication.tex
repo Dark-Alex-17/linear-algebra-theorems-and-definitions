@@ -8,7 +8,7 @@
 \begin{theorem}
 	\hfill\\
 	Let $V$ be a vector space. Let $T, U_1, U_2 \in \LL(V)$. Then
-	
+
 	\begin{enumerate}
 		\item $T(U_1 + U_2) = TU_1 + TU_2$ and $(U_1 + U_2)T = U_1T + U_2T$
 		\item $T(U_1U_2) = (TU_1)U_2$
@@ -20,18 +20,18 @@
 \begin{definition}
 	\hfill\\
 	Let $A$ be an $m \times n$ matrix and $B$ be an $n \times p$ matrix. We define the \textbf{product} of $A$ and $B$, denoted $AB$, to be the $m \times p$ matrix such that
-	
+
 	\[(AB)_{ij} = \sum_{k=1}^{n}A_{ik}B_{kj}\ \ \text{for}\ \ 1 \leq i \leq m,\ \ 1 \leq j \leq p.\]
-	
+
 	Notice that $(AB)_{ij}$ is the sum of products of corresponding entries from the $i$th row of $A$ and the $j$th column of $B$.\\
-	
+
 	The reader should observe that in order for the product $AB$ to be defined, there are restrictions regarding the relative sizes of $A$ and $B$. The following mnemonic device is helpful: ``$(m \times n) \cdot (n \times p) = (m \times p)$"; that is, in order for the product $AB$ to be defined, the two ``inner" dimensions must be equal, and the two ``outer" dimensions yield the size of the product.
 \end{definition}
 
 \begin{theorem}
 	\hfill\\
 	Let $V$, $W$, and $Z$ be finite-dimensional vector spaces with ordered bases $\alpha$, $\beta$, and $\gamma$, respectively. Let $T: V \to W$ and $U: W \to Z$ be linear transformations. Then
-	
+
 	\[[UT]_\alpha^\gamma = [U]_\beta^\gamma[T]_\alpha^\beta\]
 \end{theorem}
 
@@ -48,7 +48,7 @@
 \begin{theorem}
 	\hfill\\
 	Let $A$ be an $m \times n$ matrix, $B$ and $C$ be $n \times p$ matrices, and $D$ and $E$ be $q \times m$ matrices. Then
-	
+
 	\begin{enumerate}
 		\item $A(B + C) = AB + AC$ and $(D + E)A = DA + EA$.
 		\item $a(AB) = (aA)B = A(aB)$ for any scalar $a$.
@@ -60,18 +60,18 @@
 \begin{corollary}
 	\hfill\\
 	Let $A$ be an $m \times n$ matrix, $B_1, B_2, \dots, B_k$ be $n \times p$ matrices, $C_1, C_2, \dots, C_k$ be $q \times m$ matrices, and $a_1, a_2, \dots, a_k$ be scalars. Then
-	
+
 	\[A\left(\sum_{i=1}^{k}a_iB_i\right) = \sum_{i=1}^{k}a_iAB_i\]
-	
+
 	and
-	
+
 	\[\left(\sum_{i=1}^{k}a_iC_i\right)A = \sum_{i=1}^{k}a_iC_iA.\]
 \end{corollary}
 
 \begin{theorem}
 	\hfill\\
 	Let $A$ be an $m \times n$ matrix and $B$ be an $n \times p$ matrix. For each $j$ ($1 \leq j \leq p$) let $u_j$ and $v_j$ denote the $j$th columns of $AB$ and $B$, respectively. Then
-	
+
 	\begin{enumerate}
 		\item $u_j = Av_j$.
 		\item $v_j = Be_j$, where $e_j$ is the $j$th standard vector of $\F^p$.
@@ -81,7 +81,7 @@
 \begin{theorem}
 	\hfill\\
 	Let $V$ and $W$ be finite-dimensional vector spaces having ordered bases $\beta$  and $\gamma$, respectively, and let $T: V \to W$ be linear. Then, for each $u \in V$, we have
-	
+
 	\[[T(u)]_\gamma = [T]_\beta^\gamma [u]_\beta.\]
 \end{theorem}
 
@@ -93,7 +93,7 @@
 \begin{theorem}
 	\hfill\\
 	Let $A$ be an $m \times n$ matrix with entries from $\F$. Then the left-multiplication transformation $L_A: \F^n \to \F^m$ is linear. Furthermore, if $B$ is any other $m \times n$ matrix (with entries from $\F$) and $\beta$ and $\gamma$ are the standard ordered bases for $\F^n$ and $\F^m$, respectively, then we have the following properties.
-	
+
 	\begin{enumerate}
 		\item $[L_A]_\beta^\gamma = A$.
 		\item $L_A = L_B$ if and only if $A = B$.

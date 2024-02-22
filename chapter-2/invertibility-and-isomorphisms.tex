@@ -3,16 +3,16 @@
 \begin{definition}
 	\hfill\\
 	Let $V$ and $W$ be vector spaces, and let $T: V \to W$ be linear. A function $U: W \to V$ is said to be an \textbf{inverse} of $T$ if $TU = I_W$ and $UT = I_V$. If $T$ has an inverse, then $T$ is said to be \textbf{invertible}. If $T$ is invertible, then the inverse of $T$ is unique and is denoted by $T^{-1}$.\\
-	
+
 	The following facts hold for invertible functions $T$ and $U$.
-	
+
 	\begin{enumerate}
 		\item $(TU)^{-1} = U^{-1}T^{-1}$.
 		\item $(T^{-1})^{-1} = T$; in particular, $T^{-1}$ is invertible.
 	\end{enumerate}
-	
+
 	We often use the fact that a function is invertible if and only if it is one-to-one and onto. We can therefore restate \autoref{Theorem 2.5} as follows:
-	
+
 	\begin{enumerate}
 		\setcounter{enumi}{2}
 		\item Let $T: V \to W$ be a linear transformation, where $V$ and $W$ are finite-dimensional vector spaces of equal dimension. then $T$ is invertible if and only if $\rank{T} = \ldim{T}$.
@@ -27,7 +27,7 @@
 \begin{definition}
 	\hfill\\
 	Let $A$ be an $n \times n$ matrix. Then $A$ is \textbf{invertible} if there exists an $n \times n$ matrix $B$ such that $AB = BA = I$.\\
-	
+
 	If $A$ is invertible, then the matrix $B$ such that $AB = BA = I$ is unique. (If $C$ were another such matrix, then $C = CI = C(AB) = (CA)B = IB = B$.) The matrix $B$ is called the \textbf{inverse} of $A$ and is denoted by $A^{-1}$.
 \end{definition}
 

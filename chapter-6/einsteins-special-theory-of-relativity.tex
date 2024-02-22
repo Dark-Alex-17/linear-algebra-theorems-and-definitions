@@ -1,1 +1,121 @@
 \section{Einstein's Special Theory of Relativity}
+
+\begin{definition}[\textbf{Axioms of the Special Theory of Relativity}]
+	\hfill\\
+	The basic problem is to compare two different inertial (non-accelerating) coordinate systems $S$ and $S'$ in three-space ($\R^3$) that are in motion relative to each other under the assumption that the speed of light is the same when measured in either system. We assume that $S'$ moves at a constant velocity in relation to $S$ as measured from $S$. To simplify matters, let us suppose that the following conditions hold:
+
+	\begin{enumerate}
+		\item The corresponding axes of $S$ and $S'$ ($x$ and $x'$, $y$ and $y'$, $z$ and $z'$) are parallel, and the origin of $S'$ moves in the positive direction of the $x$-axis of $S$ at a constant velocity $v > 0$ relative to $S$.
+		\item Two clocks $C$ and $C'$ are placed in space - the first stationary relative to the coordinate system $S$ and the second stationary relative to the coordinate system $S'$. These clocks are designed to give real numbers in units of seconds as readings. The clocks are calibrated so that at the instant the origins of $S$ and $S'$ coincide, both clocks give the reading zero.
+		\item The unit of length is the \textbf{light second} (the distance light travels in 1 second), and the unit of time is the second. Note that, with respect to these units, the speed of light is 1 light second per second.
+	\end{enumerate}
+
+	Given any event (something whose position and time of occurrence can be described), we may assign a set of \textit{space-time coordinates} to it. For example, if $p$ is an event that occurs at position
+
+	\[\begin{pmatrix} x \\ y \\ z \end{pmatrix}\]
+
+	relative to $S$ and at time $t$ as read on clock $C$, we can assign to $p$ the set of coordinates
+
+	\[\begin{pmatrix} x \\ y \\ z \\ t \end{pmatrix}.\]
+
+	This ordered 4-tuple is called the \textbf{space-time coordinates} of $p$ relative to $S$ and $C$. Likewise, $p$ has a set of space-time coordinates
+
+	\[\begin{pmatrix} x' \\ y' \\ z' \\ t' \end{pmatrix}\]
+
+	relative to $S'$ and $C'$.
+
+	For a fixed velocity $v$, let $T_v: \R^4 \to \R^4$ be the mapping defined by
+
+	\[T_v \begin{pmatrix}x \\ y \\ z \\ t \end{pmatrix} = \begin{pmatrix} x' \\ y' \\ z' \\ t' \end{pmatrix},\]
+
+	where
+
+	\[\begin{pmatrix}x \\ y \\ z \\ t \end{pmatrix}\ \ \ \text{and}\ \ \ \begin{pmatrix} x' \\ y' \\ z' \\ t' \end{pmatrix}\]
+
+	are the space-time coordinates of the same event with respect to $S$ and $C$ and with respect to $S'$ and $C'$, respectively.
+
+	Einstein made certain assumptions about $T_v$ that led to his special theory of relativity. We formulate an equivalent set of assumptions.
+
+	\begin{enumerate}
+		\item[(R 1)] The speed of any light beam, when measured in either coordinate system using a clock stationary relative to that coordinate system, is 1.
+		\item[(R 2)] The mapping $T_v: \R^4 \to \R^4$ is an isomorphism.
+		\item[(R 3)] If
+
+			\[T_v\begin{pmatrix}
+					x \\ y \\ z \\ t
+				\end{pmatrix} = \begin{pmatrix}
+					x' \\ y' \\ z' \\ t'
+				\end{pmatrix}\]
+
+			then $y' = y$ and $z' = z$.
+		\item[(R 4)] If
+
+			\[T_v\begin{pmatrix}
+					x \\ y_1 \\ z_1 \\ t
+				\end{pmatrix} = \begin{pmatrix}
+					x' \\ y' \\ z' \\ t'
+				\end{pmatrix}\ \ \ \ \text{and}\ \ \ \ T_v\begin{pmatrix}
+					x \\ y_2 \\ z_2 \\ t
+				\end{pmatrix} = \begin{pmatrix}
+					x'' \\ y'' \\ z'' \\ t''
+				\end{pmatrix}\]
+			then $x'' = x'$ and $t'' = t'$.
+		\item[(R 5)] The origin of $S$ moves in the negative direction of the $x'$-axis of $S'$ at the constant velocity $-v < 0$ as measured from $S'$.
+	\end{enumerate}
+
+	Axioms (R 3) and (R 4) tell us that for $p \in \R^4$, the second and third coordinates of $T_v(p)$ are unchanged and the first and fourth coordinates of $T_v(p)$ are independent of the second and third coordinates of $p$.
+
+	These five axioms completely characterize $T_v$. The operator $T_v$ is called the \textbf{Lorentz transformation} in direction $x$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	On $\R^4$, the following statements are true.
+
+	\begin{enumerate}
+		\item $T_v(e_i) = e_i$ for $i = 2,3$.
+		\item $\lspan{\{e_2, e_3\}}$ is $T_v$-invariant.
+		\item $\lspan{\{e_1, e_4\}}$ is $T_v$-invariant.
+		\item Both $\lspan{\{e_2, e_3\}}$ and $\lspan{\{e_1, e_4\}}$ are $T_v^*$-invariant.
+		\item $T_v^*(e_i) = e_i$ for $i=2,3$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	If $\lr{L_A(w),w} = 0$ for some $w \in \R^4$, then
+
+	\[\lr{T_v^*L_AT_V(w), w} = 0.\]
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	There exist nonzero scalars $a$ and $b$ such that
+
+	\begin{enumerate}
+		\item $T_v^*L_AT_v(w_1) = aw_2$.
+		\item $T_v^*L_AT_v(w_2) = bw_1$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $B_v = [T_v]_\beta$, where $\beta$ is the standard ordered basis for $\R^4$. Then
+
+	\begin{enumerate}
+		\item $B_v^*AB_v = A$.
+		\item $T_v^*L_AT_v = L_A$.
+	\end{enumerate}
+\end{corollary}
+
+\begin{theorem}
+	\hfill\\
+	Let $\beta$ be the standard ordered basis for $\R^4$. Then
+
+	\[[T_V]_\beta = B_v = \begin{pmatrix}
+			\frac{1}{\sqrt{1 - v^2}}  & 0 & 0 & \frac{-v}{\sqrt{1 - v^2}} \\
+			0                         & 1 & 0 & 0                         \\
+			0                         & 0 & 1 & 0                         \\
+			\frac{-v}{\sqrt{1 - v^2}} & 0 & 0 & \frac{1}{\sqrt{1 - v^2}}
+		\end{pmatrix}\]
+\end{theorem}

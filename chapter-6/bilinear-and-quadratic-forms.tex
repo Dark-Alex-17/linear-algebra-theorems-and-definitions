@@ -1,1 +1,214 @@
 \section{Bilinear and Quadratic Forms}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be a vector space over a field $\F$. A function $H$ from the set $V \times V$ if ordered pairs of vectors to $\F$ is called a \textbf{bilinear form} on $V$ if $H$ is linear in each variable when the other variable is held fixed; that is, $H$ is a bilinear form on $V$ if
+
+	\begin{enumerate}
+		\item $H(ax_1 + x_2, y) = aH(x_1,y) + H(x_2,y)$ for all $x_1, x_2, y \in V$ and $a \in \F$.
+		\item $H(x,ay_1+y_2) = aH(x,y_1) + H(x,y_2)$ for all $x,y_1,y_2 \in V$ and $a \in \F$.
+	\end{enumerate}
+\end{definition}
+
+\begin{notation}
+	\hfill\\
+	We denote the set of all bilinear forms on $V$ by $\mathcal{B}(V)$.
+\end{notation}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be a vector space, let $H_1$ and $H_2$ be bilinear forms on $V$, and let $a$ be a scalar. We define the \textbf{sum} $H_1 + H_2$ and the \textbf{scalar product} $aH_1$ by the equations
+
+	\[(H_1 + H_2)(x,y) = H_1(x,y) + H_2(x,y)\]
+
+	and
+
+	\[(aH_1)(x,y) = a(H_1(x,y))\ \ \ \text{for all}\ x,y \in V.\]
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	For any vector space $V$, the sum of two bilinear forms and the product of a scalar and a bilinear form on $V$ are again bilinear forms on $V$. Furthermore, $\mathcal{B}(V)$ is a vector space with respect to these operations.
+\end{theorem}
+
+\begin{definition}
+	let $\beta = \{v_1, v_2, \dots, v_n\}$ be an ordered basis for an $n$-dimensional vector space $V$, and let $H \in \mathcal{B}(V)$. We can associate $H$ with an $n \times n$ matrix $A$ whose entry in row $i$ and column $j$ is defined by
+
+	\[A_{ij} = H(v_i, v_j)\ \ \ \ \text{for}\ i,j = 1, 2, \dots, n.\]
+
+	The matrix $A$ is called the \textbf{matrix representation} of $H$ with respect to the ordered basis $\beta$ and is denoted by $\psi_\beta(H)$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	For any $n$-dimensional vector space $V$ over $\F$ and any ordered basis $\beta$ for $V$, $\psi_\beta : \mathcal{B}(V) \to M_{n \times n}(\F)$ is an isomorphism.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	For any $n$-dimensional vector space $V$, $\mathcal{B}(V)$ has dimension $n^2$.
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	Let $V$ be an $n$-dimensional vector space over $\F$ with ordered basis $\beta$. If $H \in \mathcal{B}(V)$ and $A \in M_{n \times n}(\F)$, then $\psi_\beta(H) = A$ if and only if $H(x,y) = [\phi_\beta(x)]^tA[\phi_\beta(y)]$ for all $x,y \in V$.
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	Let $\F$ be a field, $n$ a positive integer, and $\beta$ be the standard ordered basis for $F^n$. Then for any $H \in \mathcal{B}(F^n)$, there exists a unique square matrix $A \in M_{n \times n}(\F)$, names, $A = \psi_\beta(H)$, such that
+
+	\[H(x,y) = x^tAy\ \ \ \ \text{for all}\ x,y \in F^n.\]
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $A,B \in M_{n \times n}(\F)$. Then $B$ is said to be \textbf{congruent} to $A$ if there exists an invertible matrix $Q \in M_{n \times n}(\F)$ such that $B = Q^tAQ$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ be a finite-dimensional vector space with ordered bases $\beta = \{v_1, v_2, \dots, v_n\}$ and $\gamma = \{w_1, w_2, \dots, w_n\}$, and let $Q$ be the change of coordinate matrix changing $\gamma$-coordinates into $\beta$-coordinates. Then, for any $H \in \mathcal{B}(V)$, we have $\psi_\gamma(H) = Q^t\psi_\beta(H)Q$. Therefore $\psi_\gamma(H)$ is congruent to $\psi_\beta(H)$.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $V$ be an $n$-dimensional vector space with ordered basis $\beta$, and let $H$ be a bilinear form on $V$. For any $n \times n$ matrix $B$, if $B$ is congruent to $\psi_\beta(H)$, then there exists an ordered basis $\gamma$ for $V$ such that $\psi_\gamma(H) = B$. Furthermore, if $B = Q^t\psi_\beta(H)Q$ for some invertible matrix $Q$, then $Q$ changes $\gamma$-coordinates into $\beta$-coordinates.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	A bilinear form $H$ on a vector space $V$ is \textbf{symmetric} if $H(x,y) = H(y,x)$ for all $x,y \in V$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $H$ be a bilinear form on a finite-dimensional vector space $V$, and let $\beta$ be an ordered basis for $V$. Then $H$ is symmetric if and only if $\psi_\beta(H)$ is symmetric.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	A bilinear form $H$ on a finite-dimensional vector space $V$ is called \textbf{diagonalizable} if there is an ordered basis $\beta$ for $V$ such that $\psi_\beta(H)$ is a diagonal matrix.
+\end{definition}
+
+\begin{corollary}
+	\hfill\\
+	Let $H$ be a diagonalizable bilinear form on a finite-dimensional vector space $V$. Then $H$ is symmetric.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	The \textbf{characteristic} of a field $\F$ is the smallest positive integer $p$ for which a sum of $p$ 1's equals $0$. If no such positive integer exists, then $\F$ is said to have \textbf{characteristic zero}.
+\end{definition}
+
+\begin{lemma}
+	\hfill\\
+	Let $H$ be a nonzero symmetric bilinear form on a vector space $V$ over a field $\F$ not of characteristic two. Then there is a vector $x$ in $V$ such that $H(x,x) \neq 0$.
+\end{lemma}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ be a finite-dimensional vector space over a field $\F$ not of characteristic two. Then every symmetric bilinear form on $V$ is diagonalizable.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $\F$ be a field that is not of characteristic two. If $A \in M_{n \times n}(\F)$ is a symmetric matrix, then $A$ is congruent to a diagonal matrix.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ be a vector space over $\F$. A function $K: V \to \F$ is called a \textbf{quadratic form} if there exists a symmetric bilinear form $H \in \mathcal{B}(V)$ such that
+
+	\[K(x) = H(x, x)\ \ \ \text{for all}\ x \in V.\]
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $V$ be a finite-dimensional real inner product space, and let $H$ be a symmetric bilinear form on $V$. Then there exists an orthonormal basis $\beta$ for $V$ such that $\psi_\beta(H)$ is a diagonal matrix.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $K$ be a quadratic form on a finite-dimensional real inner product space $V$. There exists an orthonormal basis $\beta = \{v_1, v_2, \dots, v_n\}$ for $V$ and scalars $\lambda_1, \lambda_2, \dots, \lambda_n$ (not necessarily distinct) such that if $x \in V$ and
+
+	\[x = \sum_{i=1}^{n}s_iv_i,\ \ \ s_i \in \R\]
+
+	then
+
+	\[K(x) = \sum_{i=1}^{n}\lambda_is_i^2.\]
+
+	In fact, if $H$ is the symmetric bilinear form determined by $K$, then $\beta$ can be chosen to be any orthonormal basis for $V$ such that $\psi_\beta(H)$ is a diagonal matrix.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $z=f(t_1, t_2, \dots, t_n)$ be a fixed real-valued function of $n$ real variables for which all third-order partial derivatives exist and are continuous. The function $f$ is said to have a \textbf{local maximum} at point $p \in \R^n$ if there exists a $\delta > 0$ such that $f(p) \geq f(x)$ whenever $||x - p|| < \delta$. Likewise, $f$ has a \textbf{local minimum} at $p \in \R^n$ if there exists a $\delta > 0$ such that $f(p) \leq f(x)$ whenever $||x - p|| < \delta$. If $f$ has either a local minimum or a local maximum at $p$, we say that $f$ has a \textbf{local extremum} at $p$. A point $p \in \R^n$ is called a \textbf{critical point} of $f$ if $\displaystyle\frac{\partial f(p)}{\partial(t_i)} = 0$ for $i = 1, 2, \dots, n$. It is a well known fact that if $f$ has a local extremum at a point $p \in \R^n$, then $p$ is a critical point of $f$. For, if $f$ has a local extremum at $p=(p_1, p_2, \dots, p_n)$, then for any $i = 1, 2, \dots, n$, the function $\phi_i$ defined by $\phi_i(t) = f(p_1, p_2, \dots, p_{i-1}, t, p_{i+1}, \dots, p_n)$ has a local extremum at $t = p_i$. So, by an elementary single-variable argument,
+
+	\[\frac{\partial f(p)}{\partial t_i} = \frac{d\phi_i(p_i)}{dt} = 0.\]
+
+	Thus $p$ is a critical point of $f$. But critical points are not necessarily local extrema.
+
+	The second-order partial derivatives of $f$ at a critical point $p$ can often be used to test for local extremum at $p$. These partials determine a matrix $A(p)$ in which the row $i$, column $j$ entry is
+
+	\[\frac{\partial^2f(p)}{(\partial t_i)(\partial t_j)}.\]
+
+	This matrix is called the \textbf{Hessian matrix} of $f$ at $p$. Note that if the third order partial derivatives of $f$ are continuous, then the mixed second-order partials of $f$ at $p$ are independent of the order in which they are taken, and hence $A(p)$ is a symmetric matrix. In this case, all of the eigenvalues of $A(p)$ are real.
+\end{definition}
+
+\begin{theorem}[\textbf{The Second Derivative Test}]
+	\hfill\\
+	Let $f(t_1, t_2, \dots, t_n)$ be a real-valued function in $n$ real variables for which all third-order partial derivatives exist and are continuous. Let $p = (p_1, p_2, \dots, p_n)$ be a critical point of $f$, and let $A(p)$ be the Hessian of $f$ at $p$.
+
+	\begin{enumerate}
+		\item If all eigenvalues of $A(p)$ are positive, then $f$ has a local minimum at $p$.
+		\item If all eigenvalues of $A(p)$ are negative, then $f$ has a local maximum at $p$.
+		\item If $A(p)$ has at least one positive and at least one negative eigenvalue, then $f$ has no local extremum at $p$ ($P$ is called a \textbf{saddle-point} of $f$).
+		\item If $\rank{A(p)} < n$ and $A(p)$ does not have both positive and negative eigenvalues, then the second derivative test is inconclusive.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	The \textbf{rank} of a bilinear form is the rank of any of its matrix representations.
+\end{definition}
+
+\begin{theorem}[\textbf{Sylvester's Law of Inertia}]
+	Let $H$ be a symmetric bilinear form on a finite-dimensional real vector space $V$. Then the number of positive diagonal entries and the number of negative diagonal entries in any diagonal matrix representation of $H$ are each independent of the diagonal representation.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	The number of positive diagonal entries in a diagonal representation of a symmetric bilinear form on a real vector space is called the \textbf{index} of the form. The difference between the number of positive and the number of negative diagonal entries in a diagonal representation of a symmetric bilinear form is called the \textbf{signature} of the form. The three terms \textit{rank}, \textit{index}, and \textit{signature} are called \textbf{invariants} of the bilinear form because they are invariant with respect to matrix representations. These same terms apply to the associated quadratic form. Notice that the values of any two of these invariants determine the value of the third.
+\end{definition}
+
+\begin{corollary}[\textbf{Sylvester's Law of Inertia for Matrices}]
+	\hfill\\
+	Let $A$ be a real symmetric matrix. Then the number of positive diagonal entries and the number of negative diagonal entries in any diagonal matrix congruent to $A$ is independent of the choice of the diagonal matrix.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $A$ be a real symmetric matrix, and let $D$ be a diagonal matrix that is congruent to $A$. The number of positive diagonal entries of $D$ is called the \textbf{index} of $A$. The difference between the number of positive diagonal entries and the number of negative diagonal entries of $D$ is called the \textbf{signature} of $A$. As before, the \textit{rank}, \textit{index}, and \textit{signature} of a matrix are called the \textbf{invariants} of the matrix, and the values of any two of these invariants determine the value of the third.
+\end{definition}
+
+\begin{corollary}
+	\hfill\\
+	Two real symmetric $n \times n$ matrices are congruent if and only if they have the same invariants.
+\end{corollary}
+
+\begin{corollary}
+	\hfill\\
+	A real symmetric $n \times n$ matrix $A$ has index $p$ and rank $r$ if and only if $A$ is congruent to $J_{pr}$, defined by
+
+	\[J_{pr} = \begin{pmatrix}
+			I_p & O        & O \\
+			O   & -I_{r-p} & O \\
+			O   & O        & O
+		\end{pmatrix}\]
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	For a $2 \times 2$ matrix $M$ with columns $x$ and $y$, the bilinear form $H(M)=H(x,y)$ is called the \textbf{permanent} of $M$.
+\end{definition}

@@ -1,1 +1,65 @@
 \section{Conditioning and the Rayleigh Quotient}
+
+\begin{definition}
+	\hfill\\
+	For a system of linear equations $Ax = b$, two types of errors must be considered for real-world application. First, experimental errors arise in the collection of data since no instruments can provide completely accurate measurements. Second, computers introduce round-off errors. One might intuitively feel that small relative changes in the coefficients of the system cause small relative errors in the solution. A system that has this property is called \textbf{well-conditioned}; otherwise, the system is called \textbf{ill-conditioned}.
+\end{definition}
+
+\begin{notation}
+	\hfill\\
+	Let $Ax = b$ be a system of linear equations. We use the notation $\delta b$ to denote the vector $b' - b$, where $b$ is the vector in the original system, and $b'$ is the vector in the modified system.
+\end{notation}
+
+\begin{definition}
+	\hfill\\
+	Let $Ax = b$ be a system of linear equations. We define the \textbf{relative change} in a vector $b$ to be the scalar $||\delta b||/ ||b||$, where $|| \cdot ||$ denotes the standard norm on $\C^n$ (or $\R^n$); that is, $||b|| = \sqrt{\lr{b, b}}$. Similar definitions hold for the \textbf{relative change} of $x$.
+\end{definition}
+
+\begin{definition}
+	Let $A$ be a complex (or real) $n \times n$ matrix. Define the \textbf{(Euclidean) norm} of $A$ by
+
+	\[||A|| = \max_{x \neq 0} \frac{||Ax||}{||x||},\]
+
+	where $x \in \C^n$ or $x \in \R^n$.\\
+
+	Intuitively, $||A||$ represents the maximum \textit{magnification} of a vector by the matrix $A$.
+\end{definition}
+
+\begin{definition}
+	Let $B$ be an $n \times n$ self-adjoint matrix. The \textbf{Rayleigh quotient} for $x \neq 0$ is defined to be the scalar $R(x) = \lr{Bx, x}/ ||x||^2$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	For a self-adjoint matrix $B \in M_{n \times n}(\F)$, we have that $\displaystyle\max_{x \neq 0}R(x)$ is the largest eigenvalue of $B$ and $\displaystyle\min_{x \neq 0}R(x)$ is the smallest eigenvalue of $B$.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	For any square matrix $A$, $||A||$ is finite and, in fact, equals $\sqrt{\lambda}$, where $\lambda$ is the largest eigenvalue of $A^*A$.
+\end{corollary}
+
+\begin{lemma}
+	\hfill\\
+	For any square matrix $A$, $\lambda$ is an eigenvalue of $A^*A$ if and only if $\lambda$ is an eigenvalue of $AA^*$.
+\end{lemma}
+
+\begin{corollary}
+	\hfill\\
+	Let $A$ be an invertible matrix. Then $||A^{-1}|| = 1/\sqrt{\lambda}$, where $\lambda$ is the smallest eigenvalue of $A^*A$.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	Let $A$ be an invertible matrix. The number $||A||\cdot||A^{-1}||$ is called the \textbf{condition number} of $A$ and is denoted $\text{cond}(A)$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	For the system $Ax = b$, where $A$ is invertible and $b \neq 0$, the following statements are true.
+
+	\begin{enumerate}
+		\item For any norm, $||\cdot||$, we have $\displaystyle\frac{1}{\text{cond}(A)}\frac{||\delta b ||}{||b||} \leq \frac{||\delta x||}{||x||} \leq \text{cond}(A)\frac{||\delta b||}{||b||}$.
+		\item If $||\cdot||$ is the Euclidean norm, then $\text{cond}(A) = \sqrt{\lambda_1/\lambda_n}$, where $\lambda_1$ and $\lambda_n$ are the largest and smallest eigenvalues, respectively, of $A^*A$.
+	\end{enumerate}
+\end{theorem}

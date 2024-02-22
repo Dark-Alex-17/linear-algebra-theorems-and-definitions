@@ -1,1 +1,117 @@
 \section{Diagonalizability}
+
+\begin{theorem}
+	\hfill\\
+	Let $T$ be a linear operator on a vector space $V$, and let $\lambda_1, \lambda_2, \dots, \lambda_k$ be distinct eigenvectors of $T$. If $v_1, v_2, \dots, v_k$ are eigenvectors of $T$ such that $\lambda_i$ corresponds to $v_i$ ($1 \leq i \leq k$), then $\{v_1, v_2, \dots, v_k\}$ is linearly independent.
+\end{theorem}
+
+\begin{corollary}
+	\hfill\\
+	Let $T$ be a linear operator on an $n$-dimensional vector space $V$. If $T$ has $n$ distinct eigenvalues, then $T$ is diagonalizable.
+\end{corollary}
+
+\begin{definition}
+	\hfill\\
+	A polynomial $f(t)$ in $P(\F)$ \textbf{splits over} $\F$ if there are scalars $c, a_1, \dots, a_n$ (not necessarily distinct) in $\F$ such that
+
+	\[f(t) = c(t-a_1)(t-a_2)\dots(t-a_n).\]
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	The characteristic polynomial of any diagonalizable linear operator splits.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Let $\lambda$ be an eigenvalue of a linear operator or matrix with characteristic polynomial $f(t)$. The \textbf{(algebraic) multiplicity} of $\lambda$ is the largest positive integer $k$ for which $(t - \lambda)^k$ is a factor of $f(t)$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $T$ be a linear operator on a vector space $V$, and let $\lambda$ be an eigenvalue of $T$. Define $E_\lambda = \{x \in V : T(x) = \lambda x \}=\n{T - \lambda I_V}$. The set $E_\lambda$ is called the \textbf{eigenspace} of $T$ corresponding to the eigenvalue $\lambda$. Analogously, we define the \textbf{eigenspace} of a square matrix $A$ to be the eigenspace of $L_A$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional vector space $V$, and let $\lambda$ be an eigenvalue of $T$ having multiplicity $m$. Then $1 \leq \ldim{E_\lambda} \leq m$.
+\end{theorem}
+
+\begin{lemma}
+	\hfill\\
+	Let $T$ be a linear operator, and let $\lambda_1, \lambda_2, \dots, \lambda_k$ be distinct eigenvalues of $T$. For each $i=1, 2, \dots, k$, let $v_i \in E_{\lambda_i}$, the eigenspace corresponding to $\lambda_i$. If
+
+	\[v_1 + v_2 + \dots + v_k = 0,\]
+
+	then $v_i = 0$ for all $i$.
+\end{lemma}
+
+\begin{theorem}
+	\hfill\\
+	Let $T$ be a linear operator on a vector space $V$, and let $\lambda_1, \lambda_2, \dots, \lambda_k$ be distinct eigenvalues of $T$. For each $i = 1, 2, \dots, k$, let $S_i$ be a finite linearly independent subset of the eigenspace $E_{\lambda_i}$. Then $S = S_1 \cup S_2 \cup \dots \cup S_k$ is a linearly independent subset of $V$.
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	Let $T$ be a linear operator on a finite-dimensional vector space $V$ such that the characteristic polynomial of $T$ splits. Let $\lambda_1, \lambda_2, \dots \lambda_k$ be the distinct eigenvalues of $T$. Then
+
+	\begin{enumerate}
+		\item $T$ is diagonalizable if and only if the multiplicity of $\lambda_i$ is equal to $\ldim{E_{\lambda_i}}$ for all $i$.
+		\item If $T$ is diagonalizable and $\beta_i$ is an ordered basis for $E_{\lambda_i}$ for each $i$, then $\beta = \beta_1 \cup \beta_2 \cup \dots \cup \beta_k$ for an ordered basis for $V$ consisting of eigenvectors of $T$.\\
+
+		      \textbf{Note:} We regard $\beta_1 \cup \beta_2 \cup \dots \cup \beta_k$ as an ordered basis in the natural way -- the vectors in $\beta_1$ are listed first (in the same order as in $\beta_1$), then the vectors in $\beta_2$ (in the same order as $\beta_2$), etc.
+	\end{enumerate}
+\end{theorem}
+
+\begin{remark}[\textbf{Test for Diagonalization}]
+	\hfill\\
+	Let $T$ be a linear operator on an $n$-dimensional vector space $V$. Then $T$ is diagonalizable if and only if both of the following conditions hold.
+
+	\begin{enumerate}
+		\item The characteristic polynomial of $T$ splits.
+		\item For each eigenvalue $\lambda$ of $T$, the multiplicity of $\lambda$ equals $n - \rank{T - \lambda I}$.
+	\end{enumerate}
+\end{remark}
+
+\begin{definition}
+	\hfill\\
+	Let $W_1, W_2, \dots, W_k$ be subspaces of a vector space $V$. We define the \textbf{sum} of these subspaces to be the set
+
+	\[\{v_1 + v_2 + \dots + v_k : v_i \in W_i\ \text{for}\ 1 \leq i \leq k\}\]
+
+	which we denote by $W_1 + W_2 + \dots + W_k$ or $\displaystyle\sum_{i=1}^{k}W_i$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $W_1, W_2, \dots, W_k$ be subspaces of a vector space $V$. We call $V$ the \textbf{direct sum} of the subspaces $W_1, W_2, \dots, W_k$ and write $V = W_1 \oplus W_2 \oplus \dots \oplus W_k$, if
+
+	\[V = \sum_{i=1}^{k}W_i\]
+
+	and
+
+	\[W_j \cap \sum_{i \neq j} W_i = \{0\}\ \ \ \text{for each}\ j\ (1 \leq j \leq k)\]
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $W_1, W_2, \dots, W_k$ be subspaces of a finite-dimensional vector space $V$. The following conditions are equivalent.
+
+	\begin{enumerate}
+		\item $V = W_1 \oplus W_2 \oplus \dots \oplus W_k$.
+		\item $V = \displaystyle\sum_{i=1}^{k}W_i$ and, for any vectors $v_1, v_2, \dots, v_k$ such that $v_i \in W_i$ ($1 \leq i \leq k$), if $v_1 + v_2 + \dots + v_k = 0$, then $v_i = 0$ for all $i$.
+		\item Each vector $v \in V$ can be uniquely written as $v = v_1 + v_2 + \dots + v_k$, where $v_i \in W_i$.
+		\item If $\gamma_i$ is an ordered basis for $W_i$ ($1 \leq i \leq k$), then $\gamma_1 \cup \gamma_2 \cup \dots \cup \gamma_k$ is an ordered basis for $V$.
+		\item For each $i = 1, 2, \dots, k$, there exists an ordered basis $\gamma_i$ for $W_i$ such that $\gamma_i \cup \gamma_2 \cup \dots \cup \gamma_k$ is an ordered basis for $V$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	\hfill\\
+	A linear operator $T$ on a finite-dimensional vector space $V$ is diagonalizable if and only if $V$ is the direct sum of the eigenspaces of $T$.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Two linear operators $T$ and $U$ on a finite-dimensional vector space $V$ are called \textbf{simultaneously diagonalizable} if there exists an ordered basis $\beta$ or $V$ such that both $[T]_\beta$ and $[U]_\beta$ are diagonal matrices. Similarly, $A, B \in M_{n \times n}(\F)$ are called \textbf{simultaneously diagonalizable} if there exists an invertible matrix $Q \in M_{n \times n}(\F)$ such that both $Q^{-1}AQ$ and $Q^{-1}BQ$ are diagonal matrices.
+\end{definition}

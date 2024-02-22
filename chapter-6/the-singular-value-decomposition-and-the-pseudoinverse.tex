@@ -1,1 +1,116 @@
 \section{The Singular Value Decomposition and the Pseudoinverse}
+
+\begin{theorem}[\textbf{Singular Value Theorem for Linear Transformations}]\label{Theorem 6.26}
+	\hfill\\
+	Let $V$ and $W$ be finite-dimensional inner product spaces, and let $T: V \to W$ be a linear transformation of rank $r$. Then there exist orthonormal bases $\{v_1, v_2, \dots, v_n\}$ for $V$ and $\{u_1, u_2, \dots, u_m\}$ for $W$ and positive scalars $\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_r$ such that
+
+	\[T(v_i) = \begin{cases}
+			\sigma_iu_i & \text{if}\ 1 \leq i \leq r \\
+			0           & \text{if}\ i > r.
+		\end{cases}\]
+
+	Conversely, suppose that the preceding conditions are satisfied. Then for $1 \leq i \leq n$, $v_i$ is an eigenvector of $T^*T$ with corresponding eigenvalue $\sigma_i^2$ if $1 \leq i \leq r$ and $0$ if $i > r$. Therefore the scalars $\sigma_1, \sigma_2, \dots, \sigma_r$ are uniquely determined by $T$.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	The unique scalars $\sigma_1,\sigma_2,\dots\sigma_r$ in  \autoref{Theorem 6.26} are called the \textbf{singular values} of $T$. If $r$ is less than both $m$ and $n$, then the term \textit{singular value} is extended to include $\sigma_{r + 1} = \dots = \sigma_k = 0$, where $k$ is the minimum of $m$ and $n$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix. We define the \textbf{singular values} of $A$ to be the singular values of the linear transformation $L_A$.
+\end{definition}
+
+\begin{theorem}[\textbf{Singular Value Decomposition Theorem for Matrices}]\label{Theorem 6.27}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix of rank $r$ with the positive singular values $\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_r$, and let $\Sigma$ be the $m \times n$ matrix defined by
+
+	\[\Sigma_{ij} = \begin{cases}
+			\sigma_i & \text{if}\ i = j \leq r \\
+			0        & \text{otherwise}.
+		\end{cases}\]
+
+	Then there exists an $m \times m$ unitary matrix $U$ and an $n \times n$ unitary matrix $V$ such that
+
+	\[A = U\Sigma V^*.\]
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix of rank $r$ with positive singular values $\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_r$. A factorization $A = U\Sigma V^*$ where $U$ and $V$ are unitary matrices and $\Sigma$ is the $m \times n$ matrix defined as in \autoref{Theorem 6.27} is called a \textbf{singular value decomposition} of $A$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	For any square matrix $A$, there exists a unitary matrix $W$ and a positive semidefinite matrix $P$ such that
+
+	\[A = WP.\]
+
+	Furthermore, if $A$ is invertible, then the representation is unique.
+\end{theorem}
+
+\begin{definition}
+	\hfill\\
+	The factorization of a square matrix $A$ as $WP$ where $W$ is unitary and $P$ is positive semidefinite is called a \textbf{polar decomposition} of $A$.
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $V$ and $W$ be finite-dimensional inner product spaces over the same field, and let $T: V \to W$ be a linear transformation. Let $L: \n{T}^\perp \to \range{T}$ be the linear transformation defined by $L(x) = T(x)$ for all $x \in \n{T}^\perp$. The \textbf{pseudoinverse} (or \textit{Moore-Penrose generalized inverse}) of $T$, denoted by $T^\dagger$, is defined as the unique linear transformation from $W$ to $V$ such that
+
+	\[T^\dagger(y) = \begin{cases}
+			L^{-1}(y) & \text{for}\ y \in \range{T}        \\
+			0         & \text{for}\ y \in \range{T}^\perp.
+		\end{cases}\]
+\end{definition}
+
+\begin{definition}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix. Then there exists a unique $n \times m$ matrix $B$ such that $(L_A)^\dagger: F^m \to F^n$ is equal to the left-multiplication transformation $L_B$. We call $B$ the \textbf{pseudoinverse} of $A$ and denote it by $B = A^\dagger$.
+\end{definition}
+
+\begin{theorem}
+	\hfill\\
+	Let $A$ be an $m \times n$ matrix of rank $r$ with a singular value decomposition $A = U\Sigma V^*$ and nonzero singular values $\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_r$. Let $\Sigma^\dagger$ be the $n \times m$ matrix defined by
+
+	\[\Sigma_{ij}^\dagger = \begin{cases}
+			\frac{1}{\sigma_i} & \text{if}\ i = j \leq r \\
+			0                  & \text{otherwise.}
+		\end{cases}\]
+
+	Then $A^\dagger = V\Sigma^\dagger U^*$, and this is a singular value decomposition of $A^\dagger$.
+\end{theorem}
+
+\begin{lemma}
+	\hfill\\
+	Let $V$ and $W$ be finite-dimensional inner product spaces, and let $T: V \to W$ be linear. Then
+
+	\begin{enumerate}
+		\item $T^\dagger T$ is the orthogonal projection of $V$ on $\n{T}^\dagger$.
+		\item $TT^\dagger$ is the orthogonal projection of $W$ on $\range{T}$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{theorem}
+	\hfill\\
+	Consider the system of linear equations $Ax = b$, where $A$ is an $m \times n$ matrix and $b \in F^m$. If $z = A^\dagger b$, then $z$ has the following properties.
+
+	\begin{enumerate}
+		\item If $Ax = b$ is consistent, then $z$ is the unique solution to the system having minimum norm. That is, $z$ is a solution to the system, and if $y$ is any solution to the system, then $||z|| \leq ||y||$ with equality if and only if $z = y$.
+		\item If $Ax = b$ is inconsistent, then $z$ is the unique best approximation to a solution having minimum norm. That is, $||Az - b|| \leq ||Ay - b||$ for any $y \in F^n$, with equality if and only if $Az = Ay$. Furthermore, if $Az = Ay$, then $||z|| \leq ||y||$ with equality if and only if $z = y$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{lemma}[\textbf{Penrose Conditions}]
+	\hfill\\
+	Let $V$ and $W$ be finite-dimensional inner product spaces, and let $T: V \to W$ be linear. Then the following conditions hold:
+
+	\begin{enumerate}
+		\item $TT^\dagger T = T$.
+		\item $T^\dagger TT^\dagger = T^\dagger$.
+		\item Both $T^\dagger T$ and $TT^\dagger$ are self-adjoint.
+	\end{enumerate}
+
+	These conditions characterize the pseudoinverse of a linear transformation.
+\end{lemma}
