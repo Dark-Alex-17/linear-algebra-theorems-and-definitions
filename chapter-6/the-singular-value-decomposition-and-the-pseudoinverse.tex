@@ -41,7 +41,10 @@
 	Let $A$ be an $m \times n$ matrix of rank $r$ with positive singular values $\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_r$. A factorization $A = U\Sigma V^*$ where $U$ and $V$ are unitary matrices and $\Sigma$ is the $m \times n$ matrix defined as in \autoref{Theorem 6.27} is called a \textbf{singular value decomposition} of $A$.
 \end{definition}
 
-\begin{theorem}
+\subsection*{The Polar Decomposition of a Square Matrix}
+\addcontentsline{toc}{subsection}{The Polar Decomposition of a Square Matrix}
+
+\begin{theorem}[\textbf{Polar Decomposition}]
 	\hfill\\
 	For any square matrix $A$, there exists a unitary matrix $W$ and a positive semidefinite matrix $P$ such that
 
@@ -55,6 +58,9 @@
 	The factorization of a square matrix $A$ as $WP$ where $W$ is unitary and $P$ is positive semidefinite is called a \textbf{polar decomposition} of $A$.
 \end{definition}
 
+\subsection*{The Pseudoinverse}
+\addcontentsline{toc}{subsection}{The Pseudoinverse}
+
 \begin{definition}
 	\hfill\\
 	Let $V$ and $W$ be finite-dimensional inner product spaces over the same field, and let $T: V \to W$ be a linear transformation. Let $L: \n{T}^\perp \to \range{T}$ be the linear transformation defined by $L(x) = T(x)$ for all $x \in \n{T}^\perp$. The \textbf{pseudoinverse} (or \textit{Moore-Penrose generalized inverse}) of $T$, denoted by $T^\dagger$, is defined as the unique linear transformation from $W$ to $V$ such that
@@ -67,7 +73,9 @@
 
 \begin{definition}
 	\hfill\\
-	Let $A$ be an $m \times n$ matrix. Then there exists a unique $n \times m$ matrix $B$ such that $(L_A)^\dagger: F^m \to F^n$ is equal to the left-multiplication transformation $L_B$. We call $B$ the \textbf{pseudoinverse} of $A$ and denote it by $B = A^\dagger$.
+	Let $A$ be an $m \times n$ matrix. Then there exists a unique $n \times m$ matrix $B$ such that $(L_A)^\dagger: F^m \to F^n$ is equal to the left-multiplication transformation $L_B$. We call $B$ the \textbf{pseudoinverse} of $A$ and denote it by $B = A^\dagger$. Thus
+	
+	\[(L_A)^\dagger = L_{A^\dagger}\]
 \end{definition}
 
 \begin{theorem}
@@ -81,6 +89,9 @@
 
 	Then $A^\dagger = V\Sigma^\dagger U^*$, and this is a singular value decomposition of $A^\dagger$.
 \end{theorem}
+
+\subsection*{The Pseudoinverse and Systems of Linear Equations}
+\addcontentsline{toc}{subsection}{The Pseudoinverse and Systems of Linear Equations}
 
 \begin{lemma}
 	\hfill\\

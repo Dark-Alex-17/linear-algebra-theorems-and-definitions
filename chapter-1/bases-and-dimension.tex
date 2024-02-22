@@ -33,7 +33,7 @@
 	A vector space is called \textbf{finite-dimensional} if it has a basis consisting of a finite number of vectors. The unique number of vectors in each basis for $V$ is called the \textbf{dimension} of $V$ and is denoted by $\text{dim}(V)$. A vector space that is not finite-dimensional is called \textbf{infinite-dimensional}.
 \end{definition}
 
-\begin{corollary}
+\begin{corollary}\label{Corollary 1.5}
 	\hfill\\
 	Let $V$ be a vector space with dimension $n$.
 	\begin{enumerate}
@@ -45,6 +45,9 @@
 	\end{enumerate}
 \end{corollary}
 
+\subsection*{The Dimension of Subspaces}
+\addcontentsline{toc}{subsection}{The Dimension of Subspaces}
+
 \begin{theorem}
 	\hfill\\
 	Let $W$ be a subspace of a finite-dimensional vector space $V$. Then $W$ is finite-dimensional and $\text{dim}(W) \leq \text{dim}(V)$. Moreover, if $\text{dim}(W) = \text{dim}(V)$, then $V = W$.
@@ -55,10 +58,12 @@
 	If $W$ is a subspace of a finite-dimensional vector space $V$, then any basis for $W$ can be extended to a basis for $V$.
 \end{corollary}
 
+\subsection*{The Lagrange Interpolation Formula}
+\addcontentsline{toc}{subsection}{The Lagrange Interpolation Formula}
 
 \begin{definition}[\textbf{The Lagrange Interpolation Formula}]
 	\hfill\\
-	Corollary 2 of the replacement theorem can be applied to obtain a useful formula. Let $c_0, c_1, \dots, c_n$ be distinct scalars in an infinite field $\F$. The polynomials $f_0(x), f_1(x), \dots, f_n(x)$ defined by
+	\autoref{Corollary 1.5} of the replacement theorem can be applied to obtain a useful formula. Let $c_0, c_1, \dots, c_n$ be distinct scalars in an infinite field $\F$. The polynomials $f_0(x), f_1(x), \dots, f_n(x)$ defined by
 
 	\[f_i(x) = \frac{(x-c_0)\dots(x-c_{i-1})(x-c_{i+1})\dots(x-c_n)}{(c_i - c_0)\dots(c_i-c_{i-1})(c_i-c_{i+1})\dots(c_i-c_n)} = \prod_{\substack{k=0 \\ k \neq i}}^{n} \frac{x-c_k}{c_i - c_k}\]
 

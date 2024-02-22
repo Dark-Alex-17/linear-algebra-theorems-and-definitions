@@ -1,0 +1,83 @@
+\begin{alphasection}
+	\setcounter{alphasect}{3}
+	\section{Complex Numbers}
+
+	\begin{definition}
+		\hfill\\
+		A \textbf{complex number} is an expression of the form $z = a + bi$, where $a$ and $b$ are real numbers called the \textbf{real part} and the \textbf{imaginary part} of $z$, respectively.
+
+		The \textbf{sum} and \textbf{product} of two complex numbers $z = a + bi$ and $w = c+di$ (where $a$, $b$, $c$, and $d$ are real numbers) are defined, respectively, as follows:
+
+		\[z+w = (a + bi) + (c+di) = (a+c) + (b+d)i\]
+
+		and
+
+		\[zw = (a+bi)(c+di) = (ac-bd)+(bc+ad)i\]
+	\end{definition}
+
+	\begin{definition}
+		\hfill\\
+		Any complex number of the form $bi=0 + bi$, where $b$ is a nonzero real number, is called \textbf{imaginary}.
+	\end{definition}
+
+	\begin{theorem}
+		\hfill\\
+		The set of complex numbers with the operations of addition and multiplication previously defined is a field.
+	\end{theorem}
+
+	\begin{definition}
+		\hfill\\
+		The (\textbf{complex}) \textbf{conjugate} of a complex number $a+bi$ is the complex number $a-bi$. We denote the conjugate of a complex number $z$ by $\overline{z}$.
+	\end{definition}
+
+	\begin{theorem}
+		\hfill\\
+		Let $z$ and $w$ be complex numbers. Then the following statements are true.
+
+		\begin{enumerate}
+			\item $\overline{\overline{z}} = z$.
+			\item $\overline{(z+ w)} = \overline{z}+ \overline{w}$.
+			\item $\overline{zw} = \overline{z}\cdot\overline{w}$.
+			\item $\overline{(\frac{z}{w})} = \frac{\overline{z}}{\overline{w}}$ if $w \neq 0$.
+			\item $z$ is a real number if and only if $\overline{z} = z$.
+		\end{enumerate}
+	\end{theorem}
+
+	\begin{definition}
+		\hfill\\
+		Let $z = a + bi$, where $a,b \in \R$. The \textbf{absolute value} (or \textbf{modulus}) of $z$ is the real number $\sqrt{a^2 + b^2}$. We denote the absolute value of $z$ as $|z|$.
+	\end{definition}
+
+	\begin{theorem}
+		\hfill\\
+		Let $z$ and $w$ denote any two complex numbers. Then the following statements are true.
+
+		\begin{enumerate}
+			\item $|zw| = |z| \cdot |w|$.
+			\item $\abs{\frac{z}{w}} = \frac{|z|}{|w|}$ if $w \neq 0$.
+			\item $|z + w| \leq |z| + |w|$.
+			\item $|z| - |w| \leq |z + w|$.
+		\end{enumerate}
+	\end{theorem}
+
+	\begin{definition}
+		\hfill\\
+		Notice that, as in $\R^2$, there are two axes, the \textbf{real axis} and the \textbf{imaginary axis}.
+	\end{definition}
+
+	\begin{theorem}[\textbf{The Fundamental Theorem of Algebra}]
+		\hfill\\
+		Suppose that $p(z) = a_nz^n + a_{n-1}z^{n-1} + \dots + a_1z + a_0$ is a polynomial in $P(\C)$ degree $n \geq 1$. Then $p(z)$ has a zero.
+	\end{theorem}
+
+	\begin{corollary}
+		If $p(z) = a_nz^n + a_{n-1}z^{n-1} + \dots + a_1z + a_0$ is a polynomial of degree $n \geq 1$ with complex coefficients, then there exists complex numbers $c_1, c_2, \dots, c_n$ (not necessarily distinct) such that
+
+		\[p(z) = a_n(z-c_1)(z-c_2)\dots(z-c_n).\]
+	\end{corollary}
+
+	\begin{definition}
+		\hfill\\
+		A field is called \textbf{algebraically closed} if it has the property that every polynomial of positive degree 1. Thus the preceding corollary asserts that the field of complex numbers is algebraically closed.
+	\end{definition}
+\end{alphasection}

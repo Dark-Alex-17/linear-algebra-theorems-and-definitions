@@ -1,0 +1,65 @@
+\begin{alphasection}
+	\setcounter{alphasect}{2}
+	\section{Fields}
+
+	\begin{definition}
+		A field $\F$ is a set on which two operations $+$ and $\cdot$ (called \textbf{addition} and \textbf{multiplication}, respectively) are defined so that, for each pair of elements $x,y \in \F$, there are unique elements $x+y$ and $x \cdot y$ in $\F$ for which the following conditions hold for all elements $a,b,c \in \F$.
+
+		\begin{enumerate}
+			\item[(F 1)] $a + b = b + a$  and  $a\cdot b = b \cdot a$\\
+				(commutativity of addition and multiplication)
+			\item[(F 2)] $(a + b) + c = a + (b + c)$  and  $(a \cdot b)\cdot c = a \cdot (b \cdot c)$\\
+				(associativity of addition and multiplication)
+			\item[(F 3)] There exist distinct elements $0$ and $1$ in $\F$ such that
+
+				\[0+a = a\ \ \ \ \text{and}\ \ \ \ 1\cdot a = a\]
+				(existence of identity elements for addition and multiplication)
+
+			\item[(F 4)] For each element $a$ in $\F$ and each nonzero element $b$ in $\F$, there exists elements $c$ and $d$ in $\F$ such that
+
+				\[a+c = 0\ \ \ \ \text{and}\ \ \ \ b\cdot d = 1\]
+				(existence of inverses for addition and multiplication)
+
+			\item[(F 5)] $a \cdot(b + c) = a\cdot b + a \cdot c$\\
+				(distributivity of multiplication over addition)
+		\end{enumerate}
+
+		The elements $x + y$ and $x \cdot y$ are called the \textbf{sum} and \textbf{product}, respectively, of $x$ and $y$. The elements $0$ (read ``\textbf{zero}") and 1 (read ``\textbf{one}") mentioned in (F 3) are called \textbf{identity elements} for addition and multiplication, respectively, and the elements $c$ and $d$ referred to in (F 4) are called an \textbf{additive inverse} for $a$ and a \textbf{multiplicative inverse} for $b$, respectively.
+	\end{definition}
+
+	\begin{theorem}[\textbf{Cancellation Laws}]
+		\hfill\\
+		For arbitrary elements $a$, $b$, and $c$ in a field, the following statements are true.
+
+		\begin{enumerate}
+			\item If $a + b = c + b$, then $a=c$.
+			\item If $a \cdot b = \cdot b$ and $b\ neq 0$, then $a=c$.
+		\end{enumerate}
+	\end{theorem}
+
+	\begin{corollary}
+		\hfill\\
+		The elements $0$ and $1$ mentioned in (F 3), and the elements $c$ and $d$ mentioned in (F 4), are unique.
+	\end{corollary}
+
+	\begin{theorem}
+		\hfill\\
+		Let $a$ and $b$ be arbitrary elements of a field. Then each of the following statements are true.
+
+		\begin{enumerate}
+			\item $a \cdot 0 = 0$.
+			\item $(-a)\cdot b = a \cdot(-b) = -(a \cdot b)$.
+			\item $(-a) \cdot (-b) = a \cdot b$.
+		\end{enumerate}
+	\end{theorem}
+
+	\begin{corollary}
+		\hfill\\
+		The additive identity of a field has no multiplicative inverse.
+	\end{corollary}
+
+	\begin{definition}
+		\hfill\\
+		In an arbitrary field $\F$, the smallest positive integer $p$ for which a sum of $p$ 1's equals 0 is called the \textbf{characteristic} of $\F$; if no such positive integer exists, then $\F$ is said to have \textbf{characteristic zero}.
+	\end{definition}
+\end{alphasection}

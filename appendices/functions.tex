@@ -1,0 +1,36 @@
+\begin{alphasection}
+	\setcounter{alphasect}{1}
+	\section{Functions}
+
+	\begin{definition}
+		\hfill\\
+		If $A$ and $B$ are sets, then a \textbf{function} $f$ from $A$ to $B$, written $f: A \to B$, is a rule that associates to each element of $x$ in $A$ a unique element denoted $f(x)$ in $B$.\\
+
+		The element $f(x)$ is called the \textbf{image} of $x$ (under $f$), and $x$ is called a \textbf{preimage} of $f(x)$ (under $f$).\\
+
+		If $f: A \to B$, then $A$ is called the \textbf{domain} of $f$, $B$ is called the \textbf{codomain} of $f$, and the set $\{f(x) : x \in A\}$ is called the \textbf{range} of $f$.\\
+
+		Two functions $f: A \to B$ and $g: A \to B$ are \textbf{equal}, written $f=g$, if $f(x) = g(x)$ for all $x \in A$.
+	\end{definition}
+
+	\begin{definition}
+		\hfill\\
+		Functions such that each element of the range has a unique preimage are called \textbf{one-to-one}; that is, $f: A \to B$ is one-to-one if $f(x) = f(y)$ implies $x=y$ or, equivalently, if $x \neq y$ implies $f(x) \neq f(y)$.\\
+
+		If $f: A \to B$ is a function with range $B$, that is, if $f(A) = B$, then $f$ is called \textbf{onto}. So $f$ is onto if and only if the range of $f$ equals the codomain of $f$.
+	\end{definition}
+
+	\begin{definition}
+		\hfill\\
+		Let $f: A \to B$ be a function and $S \subseteq A$. Then a function $f_S: S \to B$, called the \textbf{restriction} of $f$ to $S$, can be formed by defining $f_S(x) = f(x)$ for each $x \in S$.
+	\end{definition}
+
+	\begin{definition}
+		\hfill\\
+		A function $f: A \to B$ is said to be \textbf{invertible} if there exists a function $g: B \to A$ such that $(f \circ g)(y) = y$ for all $y \in B$ and $(g \circ f)(x)=x$ for all $x \in A$.
+
+		If such a function $g$ exists, then it is unique and is called the \textbf{inverse} of $f$. We denote the inverse of $f$ (when it exists) by $f^{-1}$.
+
+		It can be shown that $f$ is invertible if and only if $f$ is both one-to-one and onto.
+	\end{definition}
+\end{alphasection}

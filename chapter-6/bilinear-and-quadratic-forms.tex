@@ -1,5 +1,8 @@
 \section{Bilinear and Quadratic Forms}
 
+\subsection*{Bilinear Forms}
+\addcontentsline{toc}{subsection}{Bilinear Forms}
+
 \begin{definition}
 	\hfill\\
 	Let $V$ be a vector space over a field $\F$. A function $H$ from the set $V \times V$ if ordered pairs of vectors to $\F$ is called a \textbf{bilinear form} on $V$ if $H$ is linear in each variable when the other variable is held fixed; that is, $H$ is a bilinear form on $V$ if
@@ -76,6 +79,9 @@
 	Let $V$ be an $n$-dimensional vector space with ordered basis $\beta$, and let $H$ be a bilinear form on $V$. For any $n \times n$ matrix $B$, if $B$ is congruent to $\psi_\beta(H)$, then there exists an ordered basis $\gamma$ for $V$ such that $\psi_\gamma(H) = B$. Furthermore, if $B = Q^t\psi_\beta(H)Q$ for some invertible matrix $Q$, then $Q$ changes $\gamma$-coordinates into $\beta$-coordinates.
 \end{corollary}
 
+\subsection*{Symmetric Bilinear Forms}
+\addcontentsline{toc}{subsection}{Symmetric Bilinear Forms}
+
 \begin{definition}
 	\hfill\\
 	A bilinear form $H$ on a vector space $V$ is \textbf{symmetric} if $H(x,y) = H(y,x)$ for all $x,y \in V$.
@@ -116,12 +122,18 @@
 	Let $\F$ be a field that is not of characteristic two. If $A \in M_{n \times n}(\F)$ is a symmetric matrix, then $A$ is congruent to a diagonal matrix.
 \end{corollary}
 
+\subsection*{Quadratic Forms}
+\addcontentsline{toc}{subsection}{Quadratic Forms}
+
 \begin{definition}
 	\hfill\\
 	Let $V$ be a vector space over $\F$. A function $K: V \to \F$ is called a \textbf{quadratic form} if there exists a symmetric bilinear form $H \in \mathcal{B}(V)$ such that
 
 	\[K(x) = H(x, x)\ \ \ \text{for all}\ x \in V.\]
 \end{definition}
+
+\subsection*{Quadratic Forms Over the Field $\R$}
+\addcontentsline{toc}{subsection}{Quadratic Forms Over the Field $\R$}
 
 \begin{theorem}
 	\hfill\\
@@ -140,6 +152,9 @@
 
 	In fact, if $H$ is the symmetric bilinear form determined by $K$, then $\beta$ can be chosen to be any orthonormal basis for $V$ such that $\psi_\beta(H)$ is a diagonal matrix.
 \end{corollary}
+
+\subsection*{The Second Derivative Test for Functions of Several Variables}
+\addcontentsline{toc}{subsection}{The Second Derivative Test for Functions of Several Variables}
 
 \begin{definition}
 	\hfill\\
@@ -167,6 +182,9 @@
 		\item If $\rank{A(p)} < n$ and $A(p)$ does not have both positive and negative eigenvalues, then the second derivative test is inconclusive.
 	\end{enumerate}
 \end{theorem}
+
+\subsection*{Sylvester's Law of Inertia}
+\addcontentsline{toc}{subsection}{Sylvester's Law of Inertia}
 
 \begin{definition}
 	\hfill\\
